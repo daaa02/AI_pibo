@@ -43,7 +43,7 @@ def do_explain():
     print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_explain(), args=())
-    print('ccc')
+    print('bbb')
     m = Thread(target=motion_list.m_explain(), args=())
 
     e.daemon = True
