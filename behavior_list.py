@@ -14,7 +14,7 @@ audio = Audio()
 
 
 def do_question():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_question(), args=())
     m = Thread(target=motion_list.m_question(), args=())
 
@@ -26,7 +26,7 @@ def do_question():
 
 
 def do_suggestion():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_suggestion(), args=())
     m = Thread(target=motion_list.m_suggestion(), args=())
 
@@ -38,7 +38,7 @@ def do_suggestion():
 
 
 def do_explain():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_explain(), args=())
     m = Thread(target=motion_list.m_explain(), args=())
 
@@ -50,7 +50,7 @@ def do_explain():
 
 
 def do_photo():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_photo(), args=())
     m = Thread(target=motion_list.m_photo(), args=())
 
@@ -62,7 +62,7 @@ def do_photo():
 
 
 def do_stamp():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_stamp(), args=())
     m = Thread(target=motion_list.m_stamp(), args=())
 
@@ -74,7 +74,7 @@ def do_stamp():
 
 
 def do_waiting():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_waiting(), args=())
     m = Thread(target=motion_list.m_waiting(), args=())
 
@@ -86,7 +86,7 @@ def do_waiting():
 
 
 def do_cheer():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_cheer(), args=())
     m = Thread(target=motion_list.m_cheer(), args=())
 
@@ -98,7 +98,7 @@ def do_cheer():
 
 
 def do_compliment():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_compliment(), args=())
     m = Thread(target=motion_list.m_compliment(), args=())
 
@@ -110,7 +110,7 @@ def do_compliment():
 
 
 def do_concil():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_concil(), args=())
     m = Thread(target=motion_list.m_concil(), args=())
 
@@ -122,7 +122,7 @@ def do_concil():
 
 
 def do_search():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_search(), args=())
     m = Thread(target=motion_list.m_search(), args=())
 
@@ -134,7 +134,7 @@ def do_search():
 
 
 def do_sleep():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_sleep(), args=())
     m = Thread(target=motion_list.m_sleep(), args=())
 
@@ -146,7 +146,7 @@ def do_sleep():
 
 
 def do_wakeup():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_wakeup(), args=())
     m = Thread(target=motion_list.m_wakeup(), args=())
 
@@ -158,7 +158,7 @@ def do_wakeup():
 
 
 def do_agree():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_agree(), args=())
     m = Thread(target=motion_list.m_agree(), args=())
 
@@ -170,7 +170,7 @@ def do_agree():
 
 
 def do_deny():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_deny(), args=())
     m = Thread(target=motion_list.m_deny(), args=())
 
@@ -182,7 +182,7 @@ def do_deny():
 
 
 def do_joy():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_joy(), args=())
     m = Thread(target=motion_list.m_joy(), args=())
 
@@ -194,7 +194,7 @@ def do_joy():
 
 
 def do_angry():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_angry(), args=())
     m = Thread(target=motion_list.m_angry(), args=())
 
@@ -206,7 +206,7 @@ def do_angry():
 
 
 def do_sad():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_sad(), args=())
     m = Thread(target=motion_list.m_sad(), args=())
 
@@ -218,7 +218,7 @@ def do_sad():
 
 
 def do_tired():
-    audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_tired(), args=())
     m = Thread(target=motion_list.m_sad(), args=())
 
