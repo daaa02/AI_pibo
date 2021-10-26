@@ -10,7 +10,7 @@ from openpibo.audio import Audio
 
 import motion_list
 import eye_list
-import behavior
+import behavior_list
 from NLP import nlp, Dictionary
 
 nlp = nlp()
