@@ -2,7 +2,7 @@
 
 import sys
 import time
-import sched
+from threading import Thread
 
 import openpibo
 from openpibo.speech import Speech
