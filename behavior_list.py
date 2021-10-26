@@ -14,6 +14,7 @@ audio = Audio()
 
 
 def do_question():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_question(), args=())
     m = Thread(target=motion_list.m_question(), args=())
@@ -22,10 +23,11 @@ def do_question():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_suggestion():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_suggestion(), args=())
     m = Thread(target=motion_list.m_suggestion(), args=())
@@ -34,22 +36,25 @@ def do_suggestion():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_explain():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_explain(), args=())
+    print('ccc')
     m = Thread(target=motion_list.m_explain(), args=())
 
     e.daemon = True
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_photo():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_photo(), args=())
     m = Thread(target=motion_list.m_photo(), args=())
@@ -58,10 +63,11 @@ def do_photo():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_stamp():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_stamp(), args=())
     m = Thread(target=motion_list.m_stamp(), args=())
@@ -70,10 +76,11 @@ def do_stamp():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_waiting():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_waiting(), args=())
     m = Thread(target=motion_list.m_waiting(), args=())
@@ -82,10 +89,11 @@ def do_waiting():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_cheer():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_cheer(), args=())
     m = Thread(target=motion_list.m_cheer(), args=())
@@ -94,10 +102,11 @@ def do_cheer():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_compliment():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_compliment(), args=())
     m = Thread(target=motion_list.m_compliment(), args=())
@@ -106,10 +115,11 @@ def do_compliment():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_concil():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_concil(), args=())
     m = Thread(target=motion_list.m_concil(), args=())
@@ -118,10 +128,11 @@ def do_concil():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_search():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_search(), args=())
     m = Thread(target=motion_list.m_search(), args=())
@@ -130,10 +141,11 @@ def do_search():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_sleep():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_sleep(), args=())
     m = Thread(target=motion_list.m_sleep(), args=())
@@ -142,10 +154,11 @@ def do_sleep():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_wakeup():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_wakeup(), args=())
     m = Thread(target=motion_list.m_wakeup(), args=())
@@ -154,10 +167,11 @@ def do_wakeup():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_agree():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_agree(), args=())
     m = Thread(target=motion_list.m_agree(), args=())
@@ -166,10 +180,11 @@ def do_agree():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_deny():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_deny(), args=())
     m = Thread(target=motion_list.m_deny(), args=())
@@ -178,10 +193,11 @@ def do_deny():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_joy():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_joy(), args=())
     m = Thread(target=motion_list.m_joy(), args=())
@@ -190,10 +206,11 @@ def do_joy():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_angry():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_angry(), args=())
     m = Thread(target=motion_list.m_angry(), args=())
@@ -202,10 +219,11 @@ def do_angry():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_sad():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_sad(), args=())
     m = Thread(target=motion_list.m_sad(), args=())
@@ -214,10 +232,11 @@ def do_sad():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
 
 
 def do_tired():
+    print('aaa')
     # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
     e = Thread(target=eye_list.e_tired(), args=())
     m = Thread(target=motion_list.m_sad(), args=())
@@ -226,4 +245,4 @@ def do_tired():
     m.daemon = True
 
     e.start()
-    e.start()
+    m.start()
