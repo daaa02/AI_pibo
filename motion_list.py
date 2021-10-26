@@ -16,6 +16,7 @@ def m_question():
     while True:
         o.set_motors(positions=[0, 0, 45, 0, 0, 20, 0, 0, -45, 0], movetime=1000)
         o.set_motors(positions=[0, 0, 45, 30, 0, 20, 0, 0, -45, -30], movetime=1000)
+        break
 
 
 def m_suggestion():
@@ -27,18 +28,20 @@ def m_suggestion():
         o.set_motors(positions=[0, 0, 80, 20, 20, 0, 0, 0, -80, -20], movetime=500)  # 들
         o.set_motors(positions=[0, 0, 80, -20, 20, 0, 0, 0, -80, 20], movetime=500)  # 흔
         o.set_motors(positions=[0, 0, 80, 20, 20, 0, 0, 0, -80, -20], movetime=500)  # 들
+        break
 
 
 def m_explain():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=500)  # 끄
-        o.set_motors(positions=[0, 0, 60, 0, 10, 0, 0, 0, -60, 0], movetime=1000)  # 덕
+        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=500)   # 끄
+        o.set_motors(positions=[0, 0, 60, 0,  10, 0, 0, 0, -60, 0], movetime=1000)  # 덕
         o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=1000)  # 끄
         o.set_motors(positions=[0, 0, 60, -20, 0, 0, 0, 0, -60, 20], movetime=500)  # 덕
         o.set_motors(positions=[0, 0, 60, 20, 0, 0, 0, 0, -60, -20], movetime=500)
         o.set_motors(positions=[0, 0, 60, -20, 0, 0, 0, 0, -60, 20], movetime=500)
         o.set_motors(positions=[0, 0, 60, 20, 0, 0, 0, 0, -60, -20], movetime=500)
+        break
 
 
 def m_photo():
@@ -46,6 +49,7 @@ def m_photo():
     while True:
         o.set_motors(positions=[0, 0, -80, 0, 0, 0, 0, 0, 80, 0], movetime=1000)
         o.set_motors(positions=[0, 0, -80, -20, 0, 0, 0, 0, 80, 20], movetime=1000)
+        break
 
 
 def m_stamp():
@@ -55,6 +59,7 @@ def m_stamp():
         o.set_motors(positions=[0, 0, -60, 0, 0, 0, 0, 0, 0, 0], movetime=1500)
         o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, 0, 0, 0], movetime=1000)
         o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], movetime=500)
+        break
 
 
 def m_waiting():
@@ -65,6 +70,7 @@ def m_waiting():
         o.set_motors(positions=[0, 0, -80, 20, 35, 0, 0, 0, 80, -20], movetime=2000)  # 도
         o.set_motors(positions=[0, 0, -80, 0, -35, 0, 0, 0, 80, 0], movetime=2000)  # 리
         o.set_motors(positions=[0, 0, -80, 20, 0, 0, 0, 0, 80, -20], movetime=2000)
+        break
 
 
 def m_cheer():
@@ -75,6 +81,7 @@ def m_cheer():
         o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         o.set_motors(positions=[10, 0, 80, 0, 0, 0, -10, 0, -80, 0], movetime=500)
         o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        break
 
 
 def m_compliment():  # 2,8 80º -> (3,9 30º && 0,6 10º)x2
@@ -85,6 +92,7 @@ def m_compliment():  # 2,8 80º -> (3,9 30º && 0,6 10º)x2
         o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         o.set_motors(positions=[10, 0, 80, 20, 0, 0, -10, 0, -80, -20], movetime=500)
         o.set_motors(positions=[0, 0, 80, 20, 0, 0, 0, 0, -80, -20], movetime=500)
+        break
 
 
 def m_concil():  # 4 20º,-20º -> 2,8 80,-80ºx2
@@ -97,6 +105,7 @@ def m_concil():  # 4 20º,-20º -> 2,8 80,-80ºx2
         o.set_motors(positions=[0, 0, 60, 0, -20, 0, 0, 0, -60, 0], movetime=500)
         o.set_motors(positions=[0, 0, -60, 0, -20, 0, 0, 0, 60, 0], movetime=1000)
         o.set_motors(positions=[0, 0, 60, 0, -20, 0, 0, 0, -60, 0], movetime=1000)
+        break
 
 
 def m_search():  # 4 20º,-20ºx2 && 2,8 60, 0º
@@ -107,6 +116,7 @@ def m_search():  # 4 20º,-20ºx2 && 2,8 60, 0º
         o.set_motors(positions=[0, 0, -80, -20, 40, 0, 0, 0, 80, 20], movetime=1000)
         o.set_motors(positions=[0, 0, -80, -20, -40, 0, 0, 0, 80, 20], movetime=1000)
         o.set_motors(positions=[0, 0, -80, -20, 0, 0, 0, 0, 80, 20], movetime=500)
+        break
 
 
 def m_sleep():  # 5 20->-10º -> 2,8 0º
@@ -116,6 +126,7 @@ def m_sleep():  # 5 20->-10º -> 2,8 0º
         o.set_motors(positions=[0, 0, -40, -20, 0, -20, 0, 0, 40, 20], movetime=2000)
         o.set_motors(positions=[0, 0, -80, -20, 0, -20, 0, 0, 80, 20], movetime=2000)
         o.set_motors(positions=[0, 0, -80, -20, 0, -20, 0, 0, 80, 20], movetime=2500)
+        break
 
 
 def m_wakeup():
@@ -124,6 +135,7 @@ def m_wakeup():
         o.set_motors(positions=[0, 0, -80, 0, 0, -10, 0, 0, 0, 0], movetime=500)
         o.set_motors(positions=[0, 0, 80, 0, 0, 40, 0, 0, 0, 0], movetime=3000)
         o.set_motors(positions=[20, 0, 80, 30, 0, 40, 0, 0, 80, 30], movetime=1000)
+        break
 
 
 def m_agree():
@@ -133,6 +145,7 @@ def m_agree():
         o.set_motors(positions=[0, 0, -60, 15, 0, -10, 0, 0, 60, -15], movetime=500)
         o.set_motors(positions=[0, 0, -60, 30, 0, 20, 0, 0, 60, -30], movetime=500)
         o.set_motors(positions=[0, 0, -60, 30, 0, 0, 0, 0, 60, -30], movetime=500)
+        break
 
 
 def m_deny():  # 3,9 0º -> 4 20ºx2
@@ -143,6 +156,7 @@ def m_deny():  # 3,9 0º -> 4 20ºx2
         o.set_motors(positions=[0, 0, -80, -30, -35, 0, 0, 0, 80, 30], movetime=500)  # 리
         o.set_motors(positions=[0, 0, -80, -30, 35, 0, 0, 0, 80, 30], movetime=500)  # 도
         o.set_motors(positions=[0, 0, -80, -30, -35, 0, 0, 0, 80, 30], movetime=500)  # 리
+        break
 
 
 def m_joy():  # 2,8 80º -> 3,9 30º && 0,6 10º
@@ -153,6 +167,7 @@ def m_joy():  # 2,8 80º -> 3,9 30º && 0,6 10º
         o.set_motors(positions=[0, 0, 80, 10, 0, 10, 0, 0, -80, -10], movetime=500)
         o.set_motors(positions=[10, 0, 80, 30, 0, 20, -10, 0, -80, -30], movetime=500)
         o.set_motors(positions=[0, 0, 80, 10, 0, 10, 0, 0, -80, -10], movetime=500)
+        break
 
 
 def m_angry():  # 4 -50º -> 6 10º
@@ -162,6 +177,7 @@ def m_angry():  # 4 -50º -> 6 10º
         o.set_motors(positions=[0, 0, 0, 0, -50, 0, -20, 0, 0, 0], movetime=200)
         o.set_motors(positions=[0, 0, 0, 0, -50, 0, 0, 0, 0, 0], movetime=200)
         o.set_motors(positions=[0, 0, 0, 0, -50, 0, -20, 0, 0, 0], movetime=200)
+        break
 
 
 def m_sad():  # 4 -30,30º && 5 -10º && 3,9 0º
@@ -174,6 +190,7 @@ def m_sad():  # 4 -30,30º && 5 -10º && 3,9 0º
         o.set_motors(positions=[0, 0, -80, -20, 20, -20, 0, 0, 80, 20], movetime=1000)
         o.set_motors(positions=[0, 0, -80, -20, -20, -20, 0, 0, 80, 20], movetime=1000)
         o.set_motors(positions=[0, 0, -80, -20, 0, -20, 0, 0, 80, 20], movetime=500)
+        break
 
 
 def m_tired():  # (5 -10,20º && 3,9 20,0º)x2
@@ -184,5 +201,6 @@ def m_tired():  # (5 -10,20º && 3,9 20,0º)x2
         o.set_motors(positions=[0, 0, -20, 20, -15, 10, 0, 0, 20, -20], movetime=500)
         o.set_motors(positions=[0, 0, -60, -20, 0, -20, 0, 0, 60, 20], movetime=2000)
         o.set_motors(positions=[0, 0, -20, 20, -15, 10, 0, 0, 20, -20], movetime=500)
+        break
 
 
