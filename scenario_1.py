@@ -26,12 +26,12 @@ speech = Speech()
 audio = Audio()
 
 
-def record(self, filename="stream.wav", timeout=10):
-    if os.path.isfile(filename):
-        os.remove(filename)
+# def record(self, filename="stream.wav", timeout=10):
+#     if os.path.isfile(filename):
+#         os.remove(filename)
 
-    cmd = f"arecord default -c1 -r16000 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
-    os.system(cmd)
+#     cmd = f"arecord default -c1 -r16000 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
+#     os.system(cmd)
 
     
 def stt():
@@ -75,7 +75,7 @@ def play_soccer():
 
     behavior_list.do_waiting()
     while True:
-        record = record()
+        os.system('sudo python3 record.py')
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -95,7 +95,10 @@ def play_soccer():
     behavior_list.do_waiting()
     while True:
         tts('준비가 되면 준비 완료 라고 말해줘')
-        user_input = input("input: ")
+        
+        os.system('sudo python3 record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -116,7 +119,9 @@ def play_soccer():
     behavior_list.do_suggestion()
     while True:
         tts('자 이제 풍선을 불어보자. 할 수 있지?')
-        user_input = input("input: ")
+        os.system('sudo python3 record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -159,7 +164,10 @@ def play_soccer():
     behavior_list.do_question()
     while True:
         tts('축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
-        user_input = input("input: ")
+        
+        os.system('sudo python3 record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -183,7 +191,10 @@ def play_soccer():
     behavior_list.do_question()
     while True:
         tts('풍선으로 하는 축구 놀이 재미있었어?')
-        user_input = input("input: ")
+          
+        os.system('sudo python3 record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -197,7 +208,10 @@ def play_soccer():
     behavior_list.do_tired()
     while True:
         tts('파이보는 달리느라 힘들었어. 너는 오늘 힘든 일 있었어?')
-        user_input = input("input: ")
+        
+        os.system('sudo python3 record.py')
+        user_input = stt()        
+        #user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -236,7 +250,10 @@ def play_soccer():
     behavior_list.do_question()
     while True:
         tts('다음 놀이 할까?')
-        user_input = input("input: ")
+        
+        os.system('sudo python3 record.py')
+        user_input = stt() 
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
