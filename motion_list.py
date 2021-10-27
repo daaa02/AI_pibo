@@ -14,8 +14,8 @@ ex) 행동 A = 1000, 행동 B = 4000 이면, A->B로 모터가 움직이는 시�
 def m_question():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 45, 0, 0, 20, 0, 0, -45, 0], movetime=1000)
-        o.set_motors(positions=[0, 0, 45, 30, 0, 20, 0, 0, -45, -30], movetime=1000)
+        o.set_motors(positions=[0, 0, 45, 0, 0, 20, 0, 0, -45, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 45, 30, 0, 20, 0, 0, -45, -30], movetime=500)
         break
 
 
@@ -34,10 +34,10 @@ def m_suggestion():
 def m_explain():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=500)   # 끄
-        o.set_motors(positions=[0, 0, 60, 0,  10, 0, 0, 0, -60, 0], movetime=1000)  # 덕
-        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=1000)  # 끄
-        o.set_motors(positions=[0, 0, 60, -20, 0, 0, 0, 0, -60, 20], movetime=500)  # 덕
+        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=200)   # 끄
+        o.set_motors(positions=[0, 0, 60, 0,  10, 0, 0, 0, -60, 0], movetime=500)  # 덕
+        o.set_motors(positions=[0, 0, 60, 0, -10, 0, 0, 0, -60, 0], movetime=500)  # 끄
+        o.set_motors(positions=[0, 0, 60, -20, 0, 0, 0, 0, -60, 20], movetime=200)  # 덕
         o.set_motors(positions=[0, 0, 60, 20, 0, 0, 0, 0, -60, -20], movetime=500)
         o.set_motors(positions=[0, 0, 60, -20, 0, 0, 0, 0, -60, 20], movetime=500)
         o.set_motors(positions=[0, 0, 60, 20, 0, 0, 0, 0, -60, -20], movetime=500)
