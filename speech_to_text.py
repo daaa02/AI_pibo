@@ -9,7 +9,6 @@ from openpibo.audio import Audio
 
 import requests
 import json
-import config
 
 import argparse
 
