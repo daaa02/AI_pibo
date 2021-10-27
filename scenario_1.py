@@ -18,7 +18,6 @@ import eye_list
 import behavior_list
 
 from NLP import nlp, Dictionary
-from transcribe_streaming_mic import speech_to_text
 
 nlp = nlp()
 dic = Dictionary()
