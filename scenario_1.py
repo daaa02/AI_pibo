@@ -47,9 +47,9 @@ def play_soccer():
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         elif answer == 'NO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
             tts('이번 놀이는 천이 없어도 할 수 있어!')
             # if not (user_input in user_in):
             #     tts('말 다시')
@@ -65,7 +65,7 @@ def play_soccer():
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         # else:
         #     continue
         break
@@ -86,9 +86,9 @@ def play_soccer():
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         elif answer == 'NO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
             behavior_list.do_explain()
             while True:
                 tts('엄마에게 도움을 요청해')
@@ -129,7 +129,7 @@ def play_soccer():
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         # else:
         #     tts('?')
         #     continue
@@ -153,9 +153,9 @@ def play_soccer():
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         elif answer == 'NO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         # else:
         #     break
         break
@@ -167,7 +167,7 @@ def play_soccer():
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
             behavior_list.do_sad()
             while True:
                 tts('그랬구나, 다음에 그런 일이 또 생기면 주변에 도움을 요청해봐')
@@ -175,7 +175,7 @@ def play_soccer():
                 break
 
         elif answer == 'NO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
             behavior_list.do_joy()
             while True:
                 tts('그랬구나!')
@@ -206,11 +206,11 @@ def play_soccer():
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         elif answer == 'NO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         elif answer == 'SOSO':
-            print("answer: []".format(answer) + '\n')
+            print(answer)
         # else:
         #     tts('말 다시')
         #     continue
