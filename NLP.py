@@ -16,36 +16,36 @@ class nlp:
 
 
     def nlp_yes_or_no(self, user_input, dic):
-        user_input = ''
+        answer = ''
         for i in range(len(dic.yes_or_no['Yes'])):
             if dic.yes_or_no['Yes'][i] in user_input:
-                user_input = 'YES'  # 'Yes'
+                answer = 'YES'  # 'Yes'
         for j in range(len(dic.yes_or_no['No'])):
             if dic.yes_or_no['No'][j] in user_input:
-                user_input = 'NO'  # No
+                answer = 'NO'  # No
         for k in range(len(dic.yes_or_no['SoSo'])):
             if dic.yes_or_no['SoSo'][k] in user_input:
-                user_input = 'SOSO'  # SoSo
-        return user_input
+                answer = 'SOSO'  # SoSo
+        return answer
 
 
     def nlp_done(self, user_input, dic):
-        user_input = ''
+        answer = ''
         for i in range(len(dic.done['Done'])):
             if dic.done['Done'][i] in user_input:
-                user_input = 'DONE'  # 'Done'
-        return user_input
+                answer = 'DONE'  # 'Done'
+        return answer
 
 
 class Dictionary:
     def __init__(self):
         self.yes_or_no = \
             {
-                'Yes': ['yes', '네', '예', '응', '어', '있어', '좋아', '그래'],
-                'No': ['no', '아니', '안', '별로', '글쎄', '싫어', '싫', '못하', '못해', '없어', '없네', '없는', '몰라', '모르', '몰라' '그만'],
-                'SoSo': ['again', '또', '같은', '한 번 더', '계속']
+                'Yes': ['네', '예', '응', '어', '있어', '좋아', '그래'],
+                'No': ['아니', '안', '별로', '글쎄', '싫어', '싫', '못하', '못해', '없어', '없네', '없는', '몰라', '모르', '몰라' '그만'],
+                'SoSo': ['또', '같은', '한 번 더', '계속']
             }
         self.done = \
             {
-                'Done': ['done', '완료', '됐어', '했어', '하자', '왔어']
+                'Done': ['완료', '됐어', '했어', '하자', '왔어']
             }
