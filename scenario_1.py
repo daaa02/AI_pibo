@@ -16,15 +16,15 @@ from openpibo.audio import Audio
 import motion_list
 import eye_list
 import behavior_list
-from speech_to_text import mySpeech
+
 from NLP import nlp, Dictionary
+from transcribe_streaming_mic import speech_to_text
 
 nlp = nlp()
 dic = Dictionary()
 
 speech = Speech()
 audio = Audio()
-ms = mySpeech()
 
 
 def tts(speech_text):
@@ -45,7 +45,7 @@ def play_soccer():
 
     behavior_list.do_waiting()
     while True:
-        user_input = ms.my_stt()
+        user_input = speech_to_text()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
