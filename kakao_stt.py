@@ -27,7 +27,7 @@ class mySpeech:
         if os.path.isfile(filename):
             os.remove(filename)
 
-        cmd = f"arecord -D hw:2,0 -c1 -r44100 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
+        cmd = f"arecord default -c1 -r16000 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
         os.system(cmd)
 
     def kakao_stt(self, filename):
