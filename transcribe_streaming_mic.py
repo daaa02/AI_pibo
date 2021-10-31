@@ -39,7 +39,7 @@ import pyaudio
 from six.moves import queue
 
 # Audio recording parameters
-import before_func
+import scenario_1
 
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
@@ -193,7 +193,7 @@ def speech_to_text():
 
     with MicrophoneStream(RATE, CHUNK) as stream:
         audio_generator = stream.generator()
-        print("답변을 시작해주세요. 답변을 완료한 후 enter 를 눌러주세요.")
+        print("답변 시작")
         requests = (speech.StreamingRecognizeRequest(audio_content=content)
                     for content in audio_generator)
 
