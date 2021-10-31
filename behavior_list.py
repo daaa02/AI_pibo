@@ -14,7 +14,7 @@ audio = Audio()
 
 
 def do_question():
-    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)
+    # audio.play('/home/pi/openpibo/~.mp3', out='local', volume=-2000, background=False)    # 'local': pibo speaker, 'hdmi': hdmi monitor
     # e = Thread(target=eye_list.e_question(), args=())
     m = Thread(target=motion_list.m_question(), args=())
 
