@@ -59,7 +59,7 @@ def stt():
 
 def tts(speech_text):
     filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
-    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'>{speech_text}<break time='2000ms'/></voice></speak>", filename)
+    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>", filename)
     audio.play(filename, out='local', volume=-2000, background=False)
     print(speech_text)
 
@@ -76,20 +76,25 @@ def play_soccer():
     behavior_list.do_waiting()
     while True:
         os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        if answer == 'YES':
-            print(answer)
-        elif answer == 'NO':
-            print(answer)
-            tts('이번 놀이는 천이 없어도 할 수 있어!')
-            # if not (user_input in user_in):
-            #     tts('말 다시')
-            #     user_input = input("input: ")
-            #     answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-            #     continue
+        while answer != -1:
+            if answer == 'YES':
+                print(answer)
+            elif answer == 'NO':
+                print(answer)
+                tts('이번 놀이는 천이 없어도 할 수 있어!')
+            else:
+                tts('말 다시')
+                os.system('python record.py')
+                # user_input = stt()
+                user_input = input("input: ")
+                answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+                print(answer)
+                continue
+            break
         break
 
     behavior_list.do_waiting()
