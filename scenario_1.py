@@ -67,7 +67,7 @@ def tts(speech_text):
 
 
 ###
-def play_soccer():
+def play_balloon_soccer():
     # 1) 준비물 설명
     behavior_list.do_explain()
     while True:
