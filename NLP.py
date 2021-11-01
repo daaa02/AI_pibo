@@ -38,11 +38,10 @@ class nlp:
 
 
     def nlp_animal(self, user_input, dic):
-        answer = []
+        answer = ''
         for i in range(len(dic.animal)):
             if dic.animal[i] in user_input:
-                answer.append(i)
-        return answer
+                return answer
 
 
 class Dictionary:
