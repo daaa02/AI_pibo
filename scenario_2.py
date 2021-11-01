@@ -45,9 +45,9 @@ def stt():
     }
 
     with open('stream.wav', 'rb') as fp:
-        audio = fp.read()
+        stream = fp.read()
 
-    res = requests.post(kakao_speech_url, headers=headers, data=audio)
+    res = requests.post(kakao_speech_url, headers=headers, data=stream)
     # print(res.text)
 
     result_json_string = res.text[res.text.index('{"type":"finalResult"'):res.text.rindex('}') + 1]
