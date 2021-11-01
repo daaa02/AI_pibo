@@ -45,9 +45,9 @@ def stt():
     }
 
     with open('stream.wav', 'rb') as fp:
-        stream = fp.read()
+        audio = fp.read()
 
-    res = requests.post(kakao_speech_url, headers=headers, data=stream)
+    res = requests.post(kakao_speech_url, headers=headers, data=audio)
     # print(res.text)
 
     result_json_string = res.text[res.text.index('{"type":"finalResult"'):res.text.rindex('}') + 1]
@@ -72,7 +72,7 @@ def play_soccer():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('풍선과 천을 준비할 수 있어?')
+        tts('\n풍선과 천을 준비할 수 있어?')
         break
 
     behavior_list.do_waiting()
@@ -117,7 +117,7 @@ def play_soccer():
     # 2) 놀이 설명
     behavior_list.do_suggestion()
     while True:
-        tts('너가 좋아하는 색깔의 풍선을 골라봐.')
+        tts('\n너가 좋아하는 색깔의 풍선을 골라봐.')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -129,7 +129,7 @@ def play_soccer():
     # 3) 놀이 진행
     behavior_list.do_suggestion()
     while True:
-        tts('자 이제 풍선을 불어보자. 할 수 있지?')
+        tts('\n자 이제 풍선을 불어보자. 할 수 있지?')
         # os.system('python record.py')
         # user_input = stt()
         user_input = input("input: ")
@@ -173,7 +173,7 @@ def play_soccer():
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
-        tts('축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
+        tts('\n축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -201,7 +201,7 @@ def play_soccer():
     # 5) 마무리 대화
     behavior_list.do_question()
     while True:
-        tts('풍선으로 하는 축구 놀이 재미있었어?')
+        tts('\n풍선으로 하는 축구 놀이 재미있었어?')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -248,7 +248,7 @@ def play_soccer():
     behavior_list.do_stamp()
     while True:
         time.sleep(3)
-        tts('오늘은 튼튼 스탬프를 찍어줄게')
+        tts('\n오늘은 튼튼 스탬프를 찍어줄게')
         break
 
     behavior_list.do_photo()
@@ -262,7 +262,7 @@ def play_soccer():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('다음 놀이 할까?')
+        tts('\n다음 놀이 할까?')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -280,4 +280,4 @@ def play_soccer():
         #     continue
         break
 
-    print("시나리오 30: 풍선 축구 놀이 끄읏")
+    print("\n\n**시나리오 30: 풍선 축구 놀이 끄읏**\n\n")
