@@ -33,10 +33,10 @@ audio = Audio()
 #     cmd = f"arecord default -c1 -r16000 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
 #     os.system(cmd)
 
-    
+
 def stt():
     rest_api_key = 'f8f8c3f66bb3310016fdeccffba152e8'
-    
+
     kakao_speech_url = "https://kakaoi-newtone-openapi.kakao.com/v1/recognize"
     headers = {
         "Content-Type": "application/octet-stream",
@@ -48,9 +48,9 @@ def stt():
         audio = fp.read()
 
     res = requests.post(kakao_speech_url, headers=headers, data=audio)
-    #print(res.text)
+    # print(res.text)
 
-    result_json_string = res.text[res.text.index('{"type":"finalResult"'):res.text.rindex('}')+1]
+    result_json_string = res.text[res.text.index('{"type":"finalResult"'):res.text.rindex('}') + 1]
     result_final = json.loads(result_json_string)
     result = result_final['value']
     print(result)
@@ -59,7 +59,9 @@ def stt():
 
 def tts(speech_text):
     filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
-    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>", filename)
+    speech.tts(
+        f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>",
+        filename)
     audio.play(filename, out='local', volume=-2000, background=False)
     print(speech_text)
 
@@ -75,7 +77,7 @@ def play_soccer():
 
     behavior_list.do_waiting()
     while True:
-        os.system('python record.py')
+        # os.system('python record.py')
         # user_input = stt()
         user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -88,7 +90,7 @@ def play_soccer():
                 tts('이번 놀이는 천이 없어도 할 수 있어!')
             else:
                 tts('말 다시')
-                os.system('python record.py')
+                # os.system('python record.py')
                 # user_input = stt()
                 user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -99,11 +101,11 @@ def play_soccer():
 
     behavior_list.do_waiting()
     while True:
-        tts('준비가 되면 준비 완료 라고 말해줘')
-        
-        os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
+        tts('풍선 준비가 되면 준비 완료 라고 말해줘')
+
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -116,31 +118,29 @@ def play_soccer():
     behavior_list.do_suggestion()
     while True:
         tts('너가 좋아하는 색깔의 풍선을 골라봐.')
-        
-        os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
+
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
+        print(answer)
         break
 
     # 3) 놀이 진행
     behavior_list.do_suggestion()
     while True:
         tts('자 이제 풍선을 불어보자. 할 수 있지?')
-        os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
-        answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)QK
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
+        answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
             print(answer)
         elif answer == 'NO':
             print(answer)
-            behavior_list.do_explain()
-            while True:
-                tts('엄마에게 도움을 요청해')
-                time.sleep(3)
-                break
+            tts('엄마에게 도움을 요청해')
+            time.sleep(3)
         # else:
         #     tts('말 다시')
         #     continue
@@ -149,12 +149,14 @@ def play_soccer():
     behavior_list.do_suggestion()
     while True:
         tts('풍선을 묶지 말고 멀리 날려보자!')
+        time.sleep(2)
         break
 
     behavior_list.do_photo()
     while True:
         time.sleep(5)
-        print('여기 opencv capture 들어갈 곳. 아마도?')
+        print('여기 행동 촬영 들어갈 곳. 아마도?')
+        time.sleep(2)
         break
 
     behavior_list.do_joy()
@@ -172,10 +174,10 @@ def play_soccer():
     behavior_list.do_question()
     while True:
         tts('축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
-        
-        os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
+
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -187,6 +189,7 @@ def play_soccer():
 
     behavior_list.do_compliment()
     while True:
+        time.sleep(2)
         tts('잘한다! 이번엔 머리로 헤딩슛을 해보자!')
         break
 
@@ -199,10 +202,10 @@ def play_soccer():
     behavior_list.do_question()
     while True:
         tts('풍선으로 하는 축구 놀이 재미있었어?')
-          
-        os.system('python record.py')
-        user_input = stt()
-        # user_input = input("input: ")
+
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -216,10 +219,10 @@ def play_soccer():
     behavior_list.do_tired()
     while True:
         tts('파이보는 달리느라 힘들었어. 너는 오늘 힘든 일 있었어?')
-        
+
         os.system('python record.py')
-        user_input = stt()        
-        #user_input = input("input: ")
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -244,24 +247,26 @@ def play_soccer():
     # 6) 놀이 기록
     behavior_list.do_stamp()
     while True:
-        tts('오늘 놀이 스탬프를 찍을게')
+        time.sleep(3)
+        tts('오늘은 튼튼 스탬프를 찍어줄게')
         break
 
     behavior_list.do_photo()
     while True:
         tts('사진을 찍어 줄게. 브이~ ^-^v')
         time.sleep(5)
-        print('여기 opencv capture 들어갈 곳2. 아마도?')
+        print('여기 행동 촬영 들어갈 곳. 아마도?')
+        time.sleep(2)
         break
 
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
         tts('다음 놀이 할까?')
-        
-        os.system('python record.py')
-        user_input = stt() 
-        # user_input = input("input: ")
+
+        # os.system('python record.py')
+        # user_input = stt()
+        user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
