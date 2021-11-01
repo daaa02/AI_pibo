@@ -263,6 +263,7 @@ def play_tissue_load():
 
     behavior_list.do_joy()
     while True:
+        time.sleep(2)
         tts('정말? 왜?')
         # os.system('python record.py')
         # user_input = stt()
