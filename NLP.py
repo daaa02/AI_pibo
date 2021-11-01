@@ -37,6 +37,14 @@ class nlp:
         return answer
 
 
+    def nlp_animal(self, user_input, dic):
+        answer = []
+        for i in range(len(dic.animal)):
+            if dic.animal[i] in user_input:
+                answer.append(i)
+        return answer
+
+
 class Dictionary:
     def __init__(self):
         self.yes_or_no = \
@@ -48,4 +56,8 @@ class Dictionary:
         self.done = \
             {
                 'Done': ['done', '완료', '됐어', '했어', '하자', '왔어']
+            }
+        self.animal = \
+            {
+                ['토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리']
             }
