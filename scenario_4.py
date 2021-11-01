@@ -343,4 +343,4 @@ def play_im_king():
         #     continue
         break
 
-    print("시나리오 13: 나는 와아아앙 놀이 끄읏")
+    print("\n\n**시나리오 13: 나는 와아아앙 놀이 끄읏**\n\n")
