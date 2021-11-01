@@ -70,7 +70,7 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('놀이를 위해 휴지가 필요해. 준비할 수 있어?')
+        tts('\n놀이를 위해 휴지가 필요해. 준비할 수 있어?')
         break
 
     behavior_list.do_question()
@@ -116,7 +116,7 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('휴지를 풀어서 길을 만들어 볼거야. 할 수 있지?')
+        tts('\n휴지를 풀어서 길을 만들어 볼거야. 할 수 있지?')
         break
 
     behavior_list.do_question()
@@ -163,7 +163,7 @@ def play_tissue_load():
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
-        tts('휴지 길을 만들어 보자! 다 만들면 알려줘')
+        tts('\n휴지 길을 만들어 보자! 다 만들면 알려줘')
         time.sleep(2)
         break
 
@@ -211,7 +211,7 @@ def play_tissue_load():
     # 4) 놀이 완료
     behavior_list.do_waiting()
     while True:
-        tts('휴지 성을 완성하면 말해줘~')
+        tts('\n휴지 성을 완성하면 말해줘~')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -240,7 +240,7 @@ def play_tissue_load():
     # 5) 마무리 대화
     behavior_list.do_suggestion()
     while True:
-        tts('길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
+        tts('\n길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
@@ -276,7 +276,7 @@ def play_tissue_load():
     behavior_list.do_stamp()
     while True:
         time.sleep(3)
-        tts('오늘은 똑똑 스탬프를 찍어줄게')
+        tts('\n오늘은 똑똑 스탬프를 찍어줄게')
         break
 
     behavior_list.do_photo()
@@ -290,7 +290,7 @@ def play_tissue_load():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('다음 놀이 할까?')
+        tts('\n다음 놀이 할까?')
 
         # os.system('python record.py')
         # user_input = stt()
@@ -308,4 +308,4 @@ def play_tissue_load():
         #     continue
         break
 
-    print("시나리오 6: 휴지길 놀이 끄읏")
+    print("\n\n**시나리오 6: 휴지길 놀이 끄읏**\n\n")
