@@ -77,9 +77,9 @@ def play_balloon_soccer():
 
     behavior_list.do_waiting()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -92,7 +92,7 @@ def play_balloon_soccer():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -103,9 +103,9 @@ def play_balloon_soccer():
     while True:
         tts('풍선 준비가 되면 준비 완료 라고 말해줘')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -119,9 +119,9 @@ def play_balloon_soccer():
     while True:
         tts('\n너가 좋아하는 색깔의 풍선을 골라봐.')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
         print(answer)
         break
@@ -130,9 +130,9 @@ def play_balloon_soccer():
     behavior_list.do_suggestion()
     while True:
         tts('\n자 이제 풍선을 불어보자. 할 수 있지?')
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -175,9 +175,9 @@ def play_balloon_soccer():
     while True:
         tts('\n축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -203,9 +203,9 @@ def play_balloon_soccer():
     while True:
         tts('\n풍선으로 하는 축구 놀이 재미있었어?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
@@ -254,6 +254,7 @@ def play_balloon_soccer():
     behavior_list.do_photo()
     while True:
         tts('사진을 찍어 줄게. 브이~ ^-^v')
+
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
@@ -264,9 +265,9 @@ def play_balloon_soccer():
     while True:
         tts('\n다음 놀이 할까?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
