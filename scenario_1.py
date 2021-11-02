@@ -90,8 +90,8 @@ def play_balloon_soccer():
                 tts('이번 놀이는 천이 없어도 할 수 있어!')
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -260,6 +260,7 @@ def play_balloon_soccer():
         time.sleep(2)
         break
 
+        
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
@@ -280,5 +281,7 @@ def play_balloon_soccer():
         #     tts('말 다시')
         #     continue
         break
-
+    
+    motion_list.m_init()
+    
     print("\n\n**시나리오 30: 풍선 축구 놀이 끄읏**\n\n")
