@@ -88,8 +88,8 @@ def play_tissue_load():
                 tts('휴지는 화장실에도 많을거야')
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -134,8 +134,8 @@ def play_tissue_load():
                 tts('휴지를 뜯어서 하나의 길로 연결하면 돼')
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -311,4 +311,7 @@ def play_tissue_load():
         #     continue
         break
 
+    motion_list.m_init()
+
     print("\n\n**시나리오 6: 휴지길 놀이 끄읏**\n\n")
+
