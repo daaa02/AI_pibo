@@ -88,8 +88,8 @@ def play_im_king():
                 tts('왕관 대신 모자를 준비해도 좋아.')
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -136,8 +136,8 @@ def play_im_king():
                 tts('재빨리 왕관을 차지하면, 시민들이 왕을 따라할거야.')
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -225,8 +225,8 @@ def play_im_king():
                 print(answer)
             else:
                 tts('말 다시')
-                # os.system('python record.py')
-                # user_input = stt()
+                os.system('python record.py')
+                user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
@@ -272,8 +272,8 @@ def play_im_king():
 
         else:
             tts('말 다시')
-            # os.system('python record.py')
-            # user_input = stt()
+            os.system('python record.py')
+            user_input = stt()
             # user_input = input("input: ")
             answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
             print(answer)
@@ -324,6 +324,7 @@ def play_im_king():
         time.sleep(2)
         break
 
+        
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
@@ -344,5 +345,7 @@ def play_im_king():
         #     tts('말 다시')
         #     continue
         break
+
+    motion_list.m_init()
 
     print("시나리오 13: 나는 와아아앙 놀이 끄읏")
