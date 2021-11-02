@@ -75,9 +75,9 @@ def play_tissue_load():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -90,7 +90,7 @@ def play_tissue_load():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -101,9 +101,9 @@ def play_tissue_load():
     while True:
         tts('준비가 되면 준비 완료 라고 말해줘')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -121,9 +121,9 @@ def play_tissue_load():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -136,7 +136,7 @@ def play_tissue_load():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -150,9 +150,9 @@ def play_tissue_load():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -169,9 +169,9 @@ def play_tissue_load():
 
     behavior_list.do_waiting()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -181,7 +181,7 @@ def play_tissue_load():
                 tts('휴지를 짧게 뜯으면 모양을 만들기 쉬워')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -213,9 +213,9 @@ def play_tissue_load():
     while True:
         tts('\n휴지 성을 완성하면 말해줘~')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -241,6 +241,7 @@ def play_tissue_load():
     behavior_list.do_suggestion()
     while True:
         tts('\n길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
+
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
@@ -249,9 +250,10 @@ def play_tissue_load():
     behavior_list.do_question()
     while True:
         tts('휴지 눈이 내리니까 정말 포근해. 너는 언제 포근함을 느껴?')
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         print(user_input)
         break
 
@@ -265,9 +267,10 @@ def play_tissue_load():
     while True:
         time.sleep(2)
         tts('정말? 왜?')
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         print(user_input)
         break
 
@@ -292,9 +295,9 @@ def play_tissue_load():
     while True:
         tts('\n다음 놀이 할까?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
