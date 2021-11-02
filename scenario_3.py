@@ -75,9 +75,9 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -90,7 +90,7 @@ def play_animal_in_hoop():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -101,9 +101,9 @@ def play_animal_in_hoop():
     while True:
         tts('준비가 되면 준비 완료 라고 말해줘')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -123,9 +123,9 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -138,7 +138,7 @@ def play_animal_in_hoop():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -152,9 +152,9 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -168,9 +168,9 @@ def play_animal_in_hoop():
         tts('\n너는 어떤 동물을 좋아해?')
         time.sleep(2)
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_animal(user_input=user_input, dic=dic)
         print(answer)
 
@@ -182,9 +182,9 @@ def play_animal_in_hoop():
         tts('다 그리면 알려줘!')
         time.sleep(5)
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -202,9 +202,9 @@ def play_animal_in_hoop():
         tts('다 오리면 알려줘!')
         time.sleep(5)
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
         if answer == 'DONE':
@@ -232,9 +232,9 @@ def play_animal_in_hoop():
     while True:
         tts('\n또 그리고 싶은 동물이 있어?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
@@ -247,7 +247,7 @@ def play_animal_in_hoop():
                 tts('말 다시')
                 # os.system('python record.py')
                 # user_input = stt()
-                user_input = input("input: ")
+                # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
                 print(answer)
                 continue
@@ -268,7 +268,7 @@ def play_animal_in_hoop():
 
     # os.system('python record.py')
     # user_input = stt()
-    user_input = input("input: ")
+    # user_input = input("input: ")
     answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
     while answer != -1:
@@ -292,7 +292,7 @@ def play_animal_in_hoop():
             tts('말 다시')
             # os.system('python record.py')
             # user_input = stt()
-            user_input = input("input: ")
+            # user_input = input("input: ")
             answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
             print(answer)
             continue
@@ -302,9 +302,9 @@ def play_animal_in_hoop():
     while True:
         tts('너는 어떤 동물을 키우고 싶어?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         print(user_input)
         break
 
@@ -312,9 +312,9 @@ def play_animal_in_hoop():
     while True:
         time.sleep(2)
         tts('정말? 왜?')
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         print(user_input)
         break
 
@@ -344,9 +344,9 @@ def play_animal_in_hoop():
     while True:
         tts('\n다음 놀이 할까?')
 
-        # os.system('python record.py')
-        # user_input = stt()
-        user_input = input("input: ")
+        os.system('python record.py')
+        user_input = stt()
+        # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         if answer == 'YES':
