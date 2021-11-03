@@ -58,9 +58,15 @@ def stt():
 
 
 def tts(speech_text):
-    filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
-    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>", filename)
-    audio.play(filename, out='local', volume=-2000, background=False)
+    speech = Speech()
+    audio = Audio()
+    
+    file = openpibo.config['DATA_PATH'] + "/tts.wav"
+    speech.tts(f"<speak>\
+                <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
+                </speak>", file)
+    audio.play(file, 'local', '-2000', True)
+    print("\n")
     print(speech_text)
 
 
@@ -70,7 +76,7 @@ def play_im_king():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n놀이를 위해 왕관이 필요해. 준비할 수 있어?')
+        tts('놀이를 위해 왕관이 필요해. 준비할 수 있어?')
         break
 
     behavior_list.do_question()
@@ -116,7 +122,7 @@ def play_im_king():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n파이보가 왕이다!를 외치면, 먼저 왕관을 쓴 사람이 왕이 되는 거야.')
+        tts('파이보가 왕이다!를 외치면, 먼저 왕관을 쓴 사람이 왕이 되는 거야.')
         tts('시민은 왕의 행동을 그대로 따라해야해.')
         tts('할 수 있지?')
         break
@@ -167,7 +173,7 @@ def play_im_king():
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
-        tts('\n왕관을 먼저 중앙에 놓아줘')
+        tts('왕관을 먼저 중앙에 놓아줘')
         time.sleep(2)
 
         os.system('python record.py')
@@ -210,7 +216,7 @@ def play_im_king():
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
-        tts('\n또 왕이 되고 싶은 사람 있어?')
+        tts('또 왕이 되고 싶은 사람 있어?')
 
         os.system('python record.py')
         user_input = stt()
@@ -245,7 +251,7 @@ def play_im_king():
     # 5) 마무리 대화
     behavior_list.do_question()
     while True:
-        tts('\n놀이 재미있었어?')
+        tts('놀이 재미있었어?')
         break
 
     # os.system('python record.py')
@@ -328,7 +334,7 @@ def play_im_king():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('\n다음 놀이 할까?')
+        tts('다음 놀이 할까?')
 
         os.system('python record.py')
         user_input = stt()
