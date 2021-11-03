@@ -254,9 +254,9 @@ def play_im_king():
         tts('놀이 재미있었어?')
         break
 
-    # os.system('python record.py')
-    # user_input = stt()
-    user_input = input("input: ")
+    os.system('python record.py')
+    user_input = stt()
+    # user_input = input("input: ")
     answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
     while answer != -1:
