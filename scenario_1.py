@@ -62,7 +62,7 @@ def tts(speech_text):
     audio = Audio()
     
     file = openpibo.config['DATA_PATH'] + "/tts.wav"
-    speech.tts("<speak>\
+    speech.tts(f"<speak>\
                 <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
                 </speak>", file)
     audio.play(file, 'local', '-2000', True)
