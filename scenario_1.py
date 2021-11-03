@@ -58,11 +58,11 @@ def stt():
 
 
 def tts(speech_text):
-    filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
+    filename = openpibo.config['DATA_PATH'] + "/tts.wav"
     speech.tts("<speak>\
                 <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
                 </speak>", filename)
-    audio.play(filename, local', '-1500', True)
+    audio.play(filename, 'local', '-1500', True)
     print("\n")
     print(speech_text)
 
@@ -118,7 +118,7 @@ def play_balloon_soccer():
     # 2) 놀이 설명
     behavior_list.do_suggestion()
     while True:
-        tts('\n너가 좋아하는 색깔의 풍선을 골라봐.')
+        tts('너가 좋아하는 색깔의 풍선을 골라봐.')
 
         os.system('python record.py')
         user_input = stt()
@@ -130,7 +130,7 @@ def play_balloon_soccer():
     # 3) 놀이 진행
     behavior_list.do_suggestion()
     while True:
-        tts('\n자 이제 풍선을 불어보자. 할 수 있지?')
+        tts('자 이제 풍선을 불어보자. 할 수 있지?')
         os.system('python record.py')
         user_input = stt()
         # user_input = input("input: ")
@@ -174,7 +174,7 @@ def play_balloon_soccer():
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
-        tts('\n축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
+        tts('축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
 
         os.system('python record.py')
         user_input = stt()
@@ -202,7 +202,7 @@ def play_balloon_soccer():
     # 5) 마무리 대화
     behavior_list.do_question()
     while True:
-        tts('\n풍선으로 하는 축구 놀이 재미있었어?')
+        tts('풍선으로 하는 축구 놀이 재미있었어?')
 
         os.system('python record.py')
         user_input = stt()
@@ -249,7 +249,7 @@ def play_balloon_soccer():
     behavior_list.do_stamp()
     while True:
         time.sleep(3)
-        tts('\n오늘은 튼튼 스탬프를 찍어줄게')
+        tts('오늘은 튼튼 스탬프를 찍어줄게')
         break
 
     behavior_list.do_photo()
@@ -265,7 +265,7 @@ def play_balloon_soccer():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('\n다음 놀이 할까?')
+        tts('다음 놀이 할까?')
 
         os.system('python record.py')
         user_input = stt()
