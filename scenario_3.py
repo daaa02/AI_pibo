@@ -58,9 +58,15 @@ def stt():
 
 
 def tts(speech_text):
-    filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
-    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>", filename)
-    audio.play(filename, out='local', volume=-2000, background=False)
+    speech = Speech()
+    audio = Audio()
+    
+    file = openpibo.config['DATA_PATH'] + "/tts.wav"
+    speech.tts(f"<speak>\
+                <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
+                </speak>", file)
+    audio.play(file, 'local', '-2000', True)
+    print("\n")
     print(speech_text)
 
 
@@ -70,7 +76,7 @@ def play_animal_in_hoop():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n놀이를 위해 훌라후프와 크레파스, 신문지가 필요해. 준비할 수 있어?')
+        tts('놀이를 위해 훌라후프와 크레파스, 신문지가 필요해. 준비할 수 있어?')
         break
 
     behavior_list.do_question()
@@ -116,7 +122,7 @@ def play_animal_in_hoop():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n먼저 동물을 그리고 모양대로 자를거야.')
+        tts('먼저 동물을 그리고 모양대로 자를거야.')
         tts('그리고 바람을 일으켜 훌라후프 안으로 동물들을 날려 넣을거야.')
         tts('할 수 있지?')
         break
@@ -165,7 +171,7 @@ def play_animal_in_hoop():
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
-        tts('\n너는 어떤 동물을 좋아해?')
+        tts('너는 어떤 동물을 좋아해?')
         time.sleep(2)
 
         os.system('python record.py')
@@ -230,7 +236,7 @@ def play_animal_in_hoop():
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
-        tts('\n또 그리고 싶은 동물이 있어?')
+        tts('또 그리고 싶은 동물이 있어?')
 
         os.system('python record.py')
         user_input = stt()
@@ -263,7 +269,7 @@ def play_animal_in_hoop():
     # 5) 마무리 대화
     behavior_list.do_question()
     while True:
-        tts('\n놀이 재미있었어?')
+        tts('놀이 재미있었어?')
         break
 
     # os.system('python record.py')
@@ -312,6 +318,7 @@ def play_animal_in_hoop():
     while True:
         time.sleep(2)
         tts('정말? 왜?')
+        
         os.system('python record.py')
         user_input = stt()
         # user_input = input("input: ")
@@ -333,7 +340,8 @@ def play_animal_in_hoop():
 
     behavior_list.do_photo()
     while True:
-        tts('사진을 찍어 줄게. 브이~ ^-^v')
+        tts('사진을 찍어 줄게. 부이부이~ ^-^')
+        
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
@@ -342,7 +350,7 @@ def play_animal_in_hoop():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('\n다음 놀이 할까?')
+        tts('다음 놀이 할까?')
 
         os.system('python record.py')
         user_input = stt()
