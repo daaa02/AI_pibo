@@ -55,7 +55,7 @@ class Dictionary:
             }
         self.done = \
             {
-                'Done': ['done', '완료', '됐어', '했어', '하자', '왔어', '시작']
+                'Done': ['done', '완료', '됐어', '했어', '하자', '왔어', '시작', '다 만들었어']
             }
         self.animal = \
             {
