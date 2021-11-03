@@ -58,11 +58,14 @@ def stt():
 
 
 def tts(speech_text):
-    filename = openpibo.config['DATA_PATH'] + "/tts.wav"
+    speech = Speech()
+    audio = Audio()
+    
+    file = openpibo.config['DATA_PATH'] + "/tts.wav"
     speech.tts("<speak>\
                 <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
-                </speak>", filename)
-    audio.play(filename, 'local', '-1500', True)
+                </speak>", file)
+    audio.play(file, 'local', '-2000', True)
     print("\n")
     print(speech_text)
 
@@ -72,7 +75,7 @@ def play_balloon_soccer():
     # 1) 준비물 설명
     behavior_list.do_explain()
     while True:
-        time.sleep(2)
+        print("\n")
         tts('풍선과 천을 준비할 수 있어?')
         break
 
