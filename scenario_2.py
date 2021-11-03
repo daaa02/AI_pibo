@@ -58,9 +58,15 @@ def stt():
 
 
 def tts(speech_text):
-    filename = openpibo.config['DATA_PATH'] + "/tts.mp3"
-    speech.tts(f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>", filename)
-    audio.play(filename, out='local', volume=-2000, background=False)
+    speech = Speech()
+    audio = Audio()
+    
+    file = openpibo.config['DATA_PATH'] + "/tts.wav"
+    speech.tts(f"<speak>\
+                <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
+                </speak>", file)
+    audio.play(file, 'local', '-2000', True)
+    print("\n")
     print(speech_text)
 
 
@@ -70,7 +76,7 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n놀이를 위해 휴지가 필요해. 준비할 수 있어?')
+        tts('놀이를 위해 휴지가 필요해. 준비할 수 있어?')
         break
 
     behavior_list.do_question()
@@ -116,7 +122,7 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(2)
-        tts('\n휴지를 풀어서 길을 만들어 볼거야. 할 수 있지?')
+        tts('휴지를 풀어서 길을 만들어 볼거야. 할 수 있지?')
         break
 
     behavior_list.do_question()
@@ -163,7 +169,7 @@ def play_tissue_load():
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
-        tts('\n휴지 길을 만들어 보자! 다 만들면 알려줘')
+        tts('휴지 길을 만들어 보자! 다 만들면 알려줘')
         time.sleep(2)
         break
 
@@ -197,7 +203,7 @@ def play_tissue_load():
     behavior_list.do_suggestion()
     while True:
         tts('천천히 걸어보자')
-        time.sleep(5)
+        time.sleep(3)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
         break
@@ -211,7 +217,7 @@ def play_tissue_load():
     # 4) 놀이 완료
     behavior_list.do_waiting()
     while True:
-        tts('\n휴지 성을 완성하면 말해줘~')
+        tts('휴지 성을 완성하면 말해줘~')
 
         os.system('python record.py')
         user_input = stt()
@@ -240,7 +246,7 @@ def play_tissue_load():
     # 5) 마무리 대화
     behavior_list.do_suggestion()
     while True:
-        tts('\n길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
+        tts('길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
 
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
@@ -279,13 +285,13 @@ def play_tissue_load():
     behavior_list.do_stamp()
     while True:
         time.sleep(3)
-        tts('\n오늘은 똑똑 스탬프를 찍어줄게')
+        tts('오늘은 똑똑 스탬프를 찍어줄게')
         break
 
     behavior_list.do_photo()
     while True:
-        tts('사진을 찍어 줄게. 브이~ ^-^v')
-        time.sleep(5)
+        tts('사진을 찍어 줄게. 쁘으으이~')
+        time.sleep(3)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
         break
@@ -293,7 +299,7 @@ def play_tissue_load():
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
-        tts('\n다음 놀이 할까?')
+        tts('다음 놀이 할까?')
 
         os.system('python record.py')
         user_input = stt()
