@@ -3,12 +3,19 @@ import motion_list
 
 def motion_test():
     time.sleep(2)
+    print('init')
     motion_list.m_init()
-    time.sleep(2)
+    time.sleep(5)
+    
+    print('question')
     motion_list.m_question()
-    time.sleep(2)
+    time.sleep(5)
+    
+    print('suggestion')
     motion_list.m_suggestion()
     time.sleep(2)
+    
+    print('explain')
     motion_list.m_explain()
     time.sleep(2)
     motion_list.m_photo()
