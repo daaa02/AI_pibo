@@ -3,6 +3,7 @@ import motion_list
 
 def motion_test():
     time.sleep(2)
+    
     print('init')
     motion_list.m_init()
     time.sleep(5)
