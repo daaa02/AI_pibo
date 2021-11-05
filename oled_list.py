@@ -9,7 +9,7 @@ o = Oled()
 
 
 def run():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_물음표1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -17,7 +17,7 @@ def run():
 
 
 def o_question():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_물음표1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -25,7 +25,7 @@ def o_question():
 
 
 def o_suggestion():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_물음표2.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -33,7 +33,7 @@ def o_suggestion():
 
 
 def o_explain():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_현재단계1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -41,7 +41,7 @@ def o_explain():
 
 
 def o_photo():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_카메라.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -49,7 +49,7 @@ def o_photo():
 
 
 def o_stamp():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_스탬프1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -57,7 +57,7 @@ def o_stamp():
 
 
 def o_waiting():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_시계.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -65,7 +65,7 @@ def o_waiting():
 
 
 def o_cheer():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_음표1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -73,7 +73,7 @@ def o_cheer():
 
 
 def o_compliment():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_엄지1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -81,7 +81,7 @@ def o_compliment():
 
 
 def o_concil():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -89,7 +89,7 @@ def o_concil():
 
 
 def o_search():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_감지1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -97,7 +97,7 @@ def o_search():
 
 
 def o_sleep():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_잠자기1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -105,7 +105,7 @@ def o_sleep():
 
 
 def o_wakeup():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_날씨.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -113,7 +113,7 @@ def o_wakeup():
 
 
 def o_agree():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_긍정.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -121,7 +121,7 @@ def o_agree():
 
 
 def o_deny():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_부정.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -129,7 +129,7 @@ def o_deny():
 
 
 def o_joy():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -137,7 +137,7 @@ def o_joy():
 
 
 def o_angry():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -145,7 +145,7 @@ def o_angry():
 
 
 def o_sad():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -153,7 +153,7 @@ def o_sad():
 
 
 def o_tired():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/image/clear.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_배터리1.png")
     o.show()
     time.sleep(20)
     o.clear()
