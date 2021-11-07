@@ -66,18 +66,14 @@ def m_explain():
         time.sleep(0.6)
         o.set_motors(positions=[0, 0, -45, 20, 0, 0, 0, 0, -60, -20], movetime=1000)
         time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, -20, 0, 0, 0, 0, -60, 20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, 20, 0, 0, 0, 0, -60, -20], movetime=500)
-        time.sleep(0.6)
         break
 
 
 def m_photo():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
-        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, -80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
+        time.sleep(0.4)
         o.set_motors(positions=[0, 0, -80, -20, 0, 0, 0, 0, -80, 20], movetime=1000)
         time.sleep(1.1)
         break
@@ -86,13 +82,11 @@ def m_photo():
 def m_stamp():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 20, 30, 0, 0, 0, 0, 80, 0], movetime=500)
-        time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -60, 0, 0, 0, 0, 0, 80, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, 0, 80, 0], movetime=500)
-        time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 20, -30, 0, 0, 0, 0, 80, 0], movetime=300)
+        time.sleep(0.4)
+        o.set_motors(positions=[0, 0, -80, -30, 0, 0, 0, 0, 80, 0], movetime=500)
+        time.sleep(0.5)
+        o.set_motors(positions=[0, 0, 0, -30, 0, 0, 0, 0, 80, 0], movetime=500)
         time.sleep(0.6)
         break
 
@@ -116,54 +110,54 @@ def m_waiting():
 def m_cheer():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
+        time.sleep(0.4)
+        o.set_motors(positions=[30, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[10, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -30, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -10, 0, -80, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[10, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[30, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, -10, -80, 0], movetime=1000)
-        time.sleep(1.1)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -30, 0, -80, 0], movetime=500)
+        time.sleep(0.6)
         break
 
 
 def m_compliment():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[10, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], movetime=300)
+        time.sleep(0.4)
+        o.set_motors(positions=[30, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -10, 0, 20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[10, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -10, 0, 20], movetime=1000)
-        time.sleep(1.1)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -30, 0, 20], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[30, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -30, 0, 20], movetime=500)
+        time.sleep(0.6)
         break
 
 
 def m_concil():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -45, 0, 20, 0, 0, 0, 30, 0], movetime=500)
+        o.set_motors(positions=[0, 0, -45, 0, 10, 0, 0, 0, 30, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -45, 0, -20, 0, 0, 0, 30, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, 0, 20, 0, 0, 0, 30, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, 0, -20, 0, 0, 0, 30, 0], movetime=1000)
-        time.sleep(1.1)
+        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, 30, 0], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, -45, 0, 10, 0, 0, 0, 30, 0], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, 30, 0], movetime=500)
+        time.sleep(0.6)
         o.set_motors(positions=[0, 0, 20, 0, 0, 0, 0, 0, -60, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -45, 0, 0, 0, 0, 0, 60, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 20, 0, 0, 0, 0, 0, -60, 0], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, 0, 0, 0, 0, 0, 60, 0], movetime=1000)
-        time.sleep(1.1)
+        o.set_motors(positions=[0, 0, -45, 0, 0, 0, 0, 0, 60, 0], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, 20, 0, 0, 0, 0, 0, -60, 0], movetime=500)
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, -45, 0, 0, 0, 0, 0, 60, 0], movetime=500)
+        time.sleep(0.6)
         break
 
 
@@ -210,13 +204,13 @@ def m_wakeup():
 def m_agree():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -80, 0, 0, 20, 0, 0, 80, 0], movetime=300)
+        o.set_motors(positions=[0, 0, -80, 30, 0, 20, 0, 0, 80, -30], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[0, 0, -80, 10, 0, -10, 0, 0, 80, -10], movetime=300)
+        o.set_motors(positions=[0, 0, -80, 30, 0, -10, 0, 0, 80, -30], movetime=300)
         time.sleep(0.4)
         o.set_motors(positions=[0, 0, -80, 30, 0, 20, 0, 0, 80, -30], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[0, 0, -80, 10, 0, -10, 0, 0, 80, -10], movetime=300)
+        o.set_motors(positions=[0, 0, -80, 30, 0, -10, 0, 0, 80, -30], movetime=300)
         time.sleep(0.4)
         o.set_motors(positions=[0, 0, -80, 30, 0, 0, 0, 0, 80, -30], movetime=500)
         time.sleep(0.6)
@@ -244,8 +238,8 @@ def m_deny():
 def m_joy():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
-        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
+        time.sleep(0.4)
         o.set_motors(positions=[10, 0, 80, 10, 0, 10, -10, 0, -80, -30], movetime=500)
         time.sleep(0.6)
         o.set_motors(positions=[0, 0, 80, 30, 0, 0, 0, 0, -80, -10], movetime=500)
