@@ -15,17 +15,17 @@ device = Device()
 
 def e_question():
     # '#21:108,209,239,100!'
-    device.send_cmd(21, '108,209,239,100')
+    device.send_cmd(21, '108,209,239,10')
 
 
 def e_suggestion():
     # '#21:108,209,239,100!'
-    device.send_cmd(21, '108,209,239,100')
+    device.send_cmd(21, '108,209,239,10')
 
 
 def e_explain():
     # '#21:108,209,239,100:!'
-    device.send_cmd(21, '108,209,239,100')
+    device.send_cmd(21, '108,209,239,10')
 
 
 def e_photo():
@@ -40,7 +40,7 @@ def e_stamp():
 
 def e_waiting():
     # '#21:108,209,239,200:!'
-    device.send_cmd(21, '108,209,239,200')
+    device.send_cmd(21, '108,209,239,20')
 
 
 def e_cheer():
@@ -55,7 +55,7 @@ def e_compliment():
 
 def e_concil():
     # '#21:186,147,223,100:!'
-    device.send_cmd(21, '186,147,223,100')
+    device.send_cmd(21, '186,147,223,10')
 
 
 def e_search():
@@ -75,12 +75,12 @@ def e_wakeup():
 
 def e_agree():
     # '#21:108,209,239,200:!'
-    device.send_cmd(21, '108,209,239,200')
+    device.send_cmd(21, '108,209,239,20')
 
 
 def e_deny():
     # '#21:255,177,190,100:!'
-    device.send_cmd(21, '255,177,190,100')
+    device.send_cmd(21, '255,177,190,10')
 
 
 def e_joy():
@@ -90,14 +90,14 @@ def e_joy():
 
 def e_angry():
     # '#21:255,177,190,300:!'
-    device.send_cmd(21, '255,177,190,300')
+    device.send_cmd(21, '255,177,190,30')
 
 
 def e_sad():
     # '#21:186,147,223,500:!'
-    device.send_cmd(21, '186,147,223,500')
+    device.send_cmd(21, '186,147,223,50')
 
 
 def e_tired():
     # '#21:251,245,155,100:!'
-    device.send_cmd(21, '251,245,155,100')
+    device.send_cmd(21, '251,245,155,10')
