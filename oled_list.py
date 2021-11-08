@@ -25,7 +25,7 @@ def o_question():
 
 
 def o_suggestion():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_물음표2.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_물음표1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -81,7 +81,7 @@ def o_compliment():
 
 
 def o_concil():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -137,7 +137,7 @@ def o_joy():
 
 
 def o_angry():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default1.png")
     o.show()
     time.sleep(20)
     o.clear()
@@ -145,7 +145,7 @@ def o_angry():
 
 
 def o_sad():
-    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default2.png")
+    o.draw_image(openpibo.config['DATA_PATH'] + "/icon/화면_default1.png")
     o.show()
     time.sleep(20)
     o.clear()
