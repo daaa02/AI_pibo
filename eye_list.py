@@ -10,164 +10,94 @@ NEOPIXEL(20) -> ex) #20:255,255,255:!
 
 """
 
+device = Device()
+
 
 def e_question():
-    color = '#21:108,209,239,100!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:108,209,239,100!'
+    device.send_cmd(21, '108,209,239,100')
 
 
 def e_suggestion():
-    color = '#21:108,209,239,100!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:108,209,239,100!'
+    device.send_cmd(21, '108,209,239,100')
 
 
 def e_explain():
-    color = '#21:108,209,239,100:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:108,209,239,100:!'
+    device.send_cmd(21, '108,209,239,100')
 
 
 def e_photo():
-    color = '#20:120,230,208:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#20:120,230,208:!'
+    device.send_cmd(20, '120,230,208')
 
 
 def e_stamp():
-    color = '#25:20:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#25:20:!'
+    device.send_cmd(25, '20')
 
 
 def e_waiting():
-    color = '#21:108,209,239,200:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:108,209,239,200:!'
+    device.send_cmd(21, '108,209,239,200')
 
 
 def e_cheer():
-    color = '#25:10:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#25:10:!'
+    device.send_cmd(25, '10')
 
 
 def e_compliment():
-    color = '#25:20:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#25:20:!'
+    device.send_cmd(25, '20')
 
 
 def e_concil():
-    color = '#21:186,147,223,100:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:186,147,223,100:!'
+    device.send_cmd(21, '186,147,223,100')
 
 
 def e_search():
-    color = '#20:108,209,239:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#20:108,209,239:!'
+    device.send_cmd(20, '108,209,239')
 
 
 def e_sleep():
-    color = '#22:0:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#22:0:!'
+    device.send_cmd(22, '0')
 
 
 def e_wakeup():
-    color = '#20:108,209,239'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#20:108,209,239'
+    device.send_cmd(20, '108,209,239')
 
 
 def e_agree():
-    color = '#21:108,209,239,200:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:108,209,239,200:!'
+    device.send_cmd(21, '108,209,239,200')
 
 
 def e_deny():
-    color = '#21:255,177,190,100:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:255,177,190,100:!'
+    device.send_cmd(21, '255,177,190,100')
 
 
 def e_joy():
-    color = '#25:10:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#25:10:!'
+    device.send_cmd(25, '10')
 
 
 def e_angry():
-    color = '#21:255,177,190,300:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:255,177,190,300:!'
+    device.send_cmd(21, '255,177,190,300')
 
 
 def e_sad():
-    color = '#21:186,147,223,500:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:186,147,223,500:!'
+    device.send_cmd(21, '186,147,223,500')
 
 
 def e_tired():
-    color = '#21:251,245,155,100:!'
-    obj = Device()
-    data = obj.send_raw(color)
-
-    print("send: ", color)
-    print("receive: ", data)
+    # '#21:251,245,155,100:!'
+    device.send_cmd(21, '251,245,155,100')
