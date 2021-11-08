@@ -32,11 +32,11 @@ def m_question():
 def m_suggestion():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 0, 0], movetime=500)
+        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 60, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 10, 0, 5, 0, 0, 0, 0, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 10, 0, 5, 0, 0, 0, 10, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 0, 0], movetime=500)
+        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 60, 0], movetime=500)
         time.sleep(0.6)
         o.set_motors(positions=[0, 0, 0, 0, 5, 0, 0, 0, 0, 0], movetime=500)
         time.sleep(0.6)
