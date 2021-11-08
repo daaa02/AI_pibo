@@ -112,11 +112,11 @@ def m_cheer():
         time.sleep(0.4)
         o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -25, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 25, 0, -80, 0], movetime=500)
         time.sleep(0.6)
         o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -25, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 25, 0, -80, 0], movetime=500)
         time.sleep(0.6)
         break
 
@@ -126,13 +126,13 @@ def m_compliment():
     while True:
         o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[25, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        o.set_motors(positions=[20, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -25, 0, 20], movetime=500)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, 20, 0, 20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[25, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        o.set_motors(positions=[20, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -25, 0, 20], movetime=500)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, 20, 0, 20], movetime=500)
         time.sleep(0.6)
         break
 
@@ -194,7 +194,7 @@ def m_wakeup():
         time.sleep(0.6)
         o.set_motors(positions=[20, 0, 80, 0, 0, -25, 0, 0, -80, 0], movetime=2000)
         time.sleep(2.1)
-        o.set_motors(positions=[20, 0, 80, 30, 0, -20, 0, 0, -80, 30], movetime=1000)
+        o.set_motors(positions=[20, 0, 80, 30, 0, -20, 0, 0, -80, -20], movetime=1000)
         time.sleep(1.1)
         break
 
