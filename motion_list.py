@@ -70,8 +70,8 @@ def m_explain():
 def m_photo():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
-        time.sleep(0.4)
+        o.set_motors(positions=[0, 0, -80, 0, 0, 0, 0, 0, -80, 0], movetime=700)
+        time.sleep(0.8)
         o.set_motors(positions=[0, 0, -80, -20, 0, 0, 0, 0, -80, 20], movetime=1000)
         time.sleep(1.1)
         break
@@ -110,13 +110,13 @@ def m_cheer():
     while True:
         o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[20, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 25, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 20, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[20, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 25, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, 20, 0, -80, 0], movetime=500)
         time.sleep(0.6)
         break
 
