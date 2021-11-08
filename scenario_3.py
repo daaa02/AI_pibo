@@ -60,7 +60,7 @@ def stt():
 def tts(speech_text):
     speech = Speech()
     audio = Audio()
-    
+
     file = openpibo.config['DATA_PATH'] + "/tts.wav"
     speech.tts(f"<speak>\
                 <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
@@ -81,7 +81,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -94,7 +94,7 @@ def play_animal_in_hoop():
                 tts('색연필이나 종이를 써도 좋아.')
             else:
                 tts('말 다시')
-                os.system('python record.py')
+                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
                 user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -107,7 +107,7 @@ def play_animal_in_hoop():
     while True:
         tts('준비가 되면 준비 완료 라고 말해줘')
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -129,7 +129,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -142,7 +142,7 @@ def play_animal_in_hoop():
                 tts('바람은 입으로 불거나 부채를 활용하면 돼.')
             else:
                 tts('말 다시')
-                os.system('python record.py')
+                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
                 user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -158,7 +158,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -167,14 +167,13 @@ def play_animal_in_hoop():
             print(answer)
         break
 
-
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
         tts('너는 어떤 동물을 좋아해?')
         time.sleep(2)
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_animal(user_input=user_input, dic=dic)
@@ -188,7 +187,7 @@ def play_animal_in_hoop():
         tts('다 그리면 알려줘!')
         time.sleep(5)
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -208,7 +207,7 @@ def play_animal_in_hoop():
         tts('다 오리면 알려줘!')
         time.sleep(5)
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -232,26 +231,25 @@ def play_animal_in_hoop():
         tts('곳곳에 휴지 섬을 만들어 보자. 휴지를 통째로 놓고 쌓아줘~')
         break
 
-
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
         tts('또 그리고 싶은 동물이 있어?')
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
         while answer != -1:
-            if answer == 'YES':     # 다시 활동으로
+            if answer == 'YES':  # 다시 활동으로
                 print(answer)
                 print('# 다시 활동으로 - 아직 구현 X')
-            elif answer == 'NO':    # 그만
+            elif answer == 'NO':  # 그만
                 print(answer)
             else:
                 tts('말 다시')
-                # os.system('python record.py')
+                # os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
                 # user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -272,7 +270,7 @@ def play_animal_in_hoop():
         tts('놀이 재미있었어?')
         break
 
-    # os.system('python record.py')
+    # os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
     # user_input = stt()
     # user_input = input("input: ")
     answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -296,7 +294,7 @@ def play_animal_in_hoop():
 
         else:
             tts('말 다시')
-            os.system('python record.py')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
             user_input = stt()
             # user_input = input("input: ")
             answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -308,7 +306,7 @@ def play_animal_in_hoop():
     while True:
         tts('너는 어떤 동물을 키우고 싶어?')
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         print(user_input)
@@ -318,8 +316,8 @@ def play_animal_in_hoop():
     while True:
         time.sleep(2)
         tts('정말? 왜?')
-        
-        os.system('python record.py')
+
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         print(user_input)
@@ -341,7 +339,7 @@ def play_animal_in_hoop():
     behavior_list.do_photo()
     while True:
         tts('사진을 찍어 줄게. 부이부이~ ^-^')
-        
+
         time.sleep(5)
         print('여기 행동 촬영 들어갈 곳. 아마도?')
         time.sleep(2)
@@ -352,7 +350,7 @@ def play_animal_in_hoop():
     while True:
         tts('다음 놀이 할까?')
 
-        os.system('python record.py')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -368,6 +366,6 @@ def play_animal_in_hoop():
         #     continue
         break
 
-    motion_list.m_init()  
+    motion_list.m_init()
 
     print("\n\n**시나리오 45: 훌라후프에 동물 넣기 놀이 끄읏**\n\n")
