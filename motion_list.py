@@ -32,24 +32,22 @@ def m_question():
 def m_suggestion():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, 0, -80, 5, 0, 0, 0, 0, 0], movetime=500)
+        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 0, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, 0, 10, 0, 0, 0, 0, 0], movetime=500)  # 흔
+        o.set_motors(positions=[0, 0, 10, 0, 5, 0, 0, 0, 0, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -60, 10, 0, 0, 0, 0, 0], movetime=500)  # 들
+        o.set_motors(positions=[0, 0, -60, 0, 5, 0, 0, 0, 0, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, 10, 10, 0, 0, 0, 0, 0], movetime=500)  # 흔
+        o.set_motors(positions=[0, 0, 0, 0, 5, 0, 0, 0, 0, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -60, 10, 0, 0, 0, 0, 0], movetime=500)  # 들
+        o.set_motors(positions=[0, 0, 0, 20, 10, 0, 0, 0, 0, -20], movetime=500)  # 흔
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, 0, 0, 10, 0, 0, 0, 20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 0, 0, 0, 10, 0, 0, 0, -20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 0, 0, 0, 10, 0, 0, 0, 20], movetime=1000)
-        time.sleep(1.1)
-        o.set_motors(positions=[0, 0, 0, 0, 0, 10, 0, 0, 0, 0], movetime=1000)
-        time.sleep(1.1)
+        o.set_motors(positions=[0, 0, 0, 0, 10, 0, 0, 0, 0, 0], movetime=500)  # 들
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, 0, 20, 10, 0, 0, 0, 0, -20], movetime=500)  # 흔
+        time.sleep(0.6)
+        o.set_motors(positions=[0, 0, 0, 0, 10, 0, 0, 0, 0, 0], movetime=500)  # 들
+        time.sleep(0.6)
         break
 
 
