@@ -54,15 +54,15 @@ def m_suggestion():
 def m_explain():
     o = Motion()
     while True:
-        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, -60, 0], movetime=500)  # 끄
+        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, -45, 0], movetime=500)  # 끄
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -45, 0, 10, 0, 0, 0, -60, 0], movetime=1000)  # 덕
+        o.set_motors(positions=[0, 0, -45, 0, 10, 0, 0, 0, -45, 0], movetime=1000)  # 덕
         time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, -60, 0], movetime=1000)  # 끄
+        o.set_motors(positions=[0, 0, -45, 0, -10, 0, 0, 0, -45, 0], movetime=1000)  # 끄
         time.sleep(1.1)
-        o.set_motors(positions=[0, 0, -45, -20, 0, 0, 0, 0, -60, 20], movetime=500)  # 덕
+        o.set_motors(positions=[0, 0, -45, -20, 0, 0, 0, 0, -45, 20], movetime=500)  # 덕
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, -45, 20, 0, 0, 0, 0, -60, -20], movetime=1000)
+        o.set_motors(positions=[0, 0, -45, 20, 0, 0, 0, 0, -45, -20], movetime=1000)
         time.sleep(1.1)
         break
 
@@ -110,13 +110,13 @@ def m_cheer():
     while True:
         o.set_motors(positions=[0, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[30, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -30, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -25, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[30, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[25, 0, 80, 0, 0, 0, 0, 0, -80, 0], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -30, 0, -80, 0], movetime=500)
+        o.set_motors(positions=[0, 0, 80, 0, 0, 0, -25, 0, -80, 0], movetime=500)
         time.sleep(0.6)
         break
 
@@ -126,13 +126,13 @@ def m_compliment():
     while True:
         o.set_motors(positions=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], movetime=300)
         time.sleep(0.4)
-        o.set_motors(positions=[30, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        o.set_motors(positions=[25, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -30, 0, 20], movetime=500)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -25, 0, 20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[30, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
+        o.set_motors(positions=[25, 0, 0, 20, 0, 0, 0, 0, 0, -20], movetime=500)
         time.sleep(0.6)
-        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -30, 0, 20], movetime=500)
+        o.set_motors(positions=[0, 0, 0, -20, 0, 0, 0, -25, 0, 20], movetime=500)
         time.sleep(0.6)
         break
 
