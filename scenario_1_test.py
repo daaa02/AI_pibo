@@ -59,7 +59,7 @@ def tts(speech_text):
     speech.tts(
         f"<speak><voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='1500ms'/></voice></prosody></speak>",
         filename)
-    audio.play(filename, out='local', volume=-2000, background=False)
+    audio.play(filename, out='local', volume=-1500, background=False)
     print(speech_text)
 
 
