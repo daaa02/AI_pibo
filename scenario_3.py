@@ -1,22 +1,17 @@
 # 3. 시나리오 구현: 의사소통/언어표현 놀이
 
 import os
-import sys
 import time
 import json
 import requests
-from threading import Thread
-from konlpy.tag import Mecab
 
 import openpibo
-import openpibo_models
 from openpibo.speech import Speech
 from openpibo.audio import Audio
 
 import motion_list
 import eye_list
 import behavior_list
-
 from NLP import nlp, Dictionary
 
 nlp = nlp()
@@ -24,14 +19,6 @@ dic = Dictionary()
 
 speech = Speech()
 audio = Audio()
-
-
-# def record(self, filename="stream.wav", timeout=10):
-#     if os.path.isfile(filename):
-#         os.remove(filename)
-
-#     cmd = f"arecord default -c1 -r16000 -f S16_LE -d {timeout} -t wav -q -vv -V streo stream.raw;sox stream.raw -c 1 -b 16 {filename};rm stream.raw"
-#     os.system(cmd)
 
 
 def stt():
@@ -58,9 +45,6 @@ def stt():
 
 
 def tts(speech_text):
-    speech = Speech()
-    audio = Audio()
-
     file = openpibo.config['DATA_PATH'] + "/tts.wav"
     speech.tts(f"<speak>\
                 <voice name='WOMAN_READ_CALM'><prosody rate='slow'>{speech_text}<break time='500ms'/></prosody></voice>\
@@ -73,13 +57,13 @@ def tts(speech_text):
 ###
 def play_animal_in_hoop():
     # 1) 준비물 설명
-    behavior_list.do_explain()
+    behavior_list.do_question()
     while True:
-        time.sleep(2)
+        time.sleep(1)
         tts('놀이를 위해 훌라후프와 크레파스, 신문지가 필요해. 준비할 수 있어?')
         break
 
-    behavior_list.do_question()
+    behavior_list.do_waiting()
     while True:
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -91,7 +75,11 @@ def play_animal_in_hoop():
                 print(answer)
             elif answer == 'NO':
                 print(answer)
-                tts('색연필이나 종이를 써도 좋아.')
+                behavior_list.do_explain()
+                while True:
+                    time.sleep(1)
+                    tts('색연필이나 종이를 써도 좋아.')
+                    break
             else:
                 tts('말 다시')
                 os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -105,6 +93,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_waiting()
     while True:
+        time.sleep(1)
         tts('준비가 되면 준비 완료 라고 말해줘')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -121,7 +110,7 @@ def play_animal_in_hoop():
     # 2) 놀이 설명
     behavior_list.do_explain()
     while True:
-        time.sleep(2)
+        time.sleep(1)
         tts('먼저 동물을 그리고 모양대로 자를거야.')
         tts('그리고 바람을 일으켜 훌라후프 안으로 동물들을 날려 넣을거야.')
         tts('할 수 있지?')
@@ -139,7 +128,11 @@ def play_animal_in_hoop():
                 print(answer)
             elif answer == 'NO':
                 print(answer)
-                tts('바람은 입으로 불거나 부채를 활용하면 돼.')
+                behavior_list.do_explain()
+                while True:
+                    time.sleep(1)
+                    tts('바람은 입으로 불거나 부채를 활용하면 돼.')
+                    break
             else:
                 tts('말 다시')
                 os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -153,6 +146,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_cheer()
     while True:
+        time.sleep(1)
         tts('훌라후프 안에 다양한 동물을 넣어보자! 준비됐지?')
         break
 
@@ -170,8 +164,8 @@ def play_animal_in_hoop():
     # 3) 놀이 진행
     behavior_list.do_explain()
     while True:
+        time.sleep(1)
         tts('너는 어떤 동물을 좋아해?')
-        time.sleep(2)
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -184,8 +178,8 @@ def play_animal_in_hoop():
 
     behavior_list.do_waiting()
     while True:
+        time.sleep(1)
         tts('다 그리면 알려줘!')
-        time.sleep(5)
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -198,14 +192,14 @@ def play_animal_in_hoop():
 
     behavior_list.do_compliment()
     while True:
-        time.sleep(2)
+        time.sleep(1)
         tts('정말 귀엽다! 이제 그림 모양대로 오려보자.')
         break
 
     behavior_list.do_waiting()
     while True:
+        time.sleep(1)
         tts('다 오리면 알려줘!')
-        time.sleep(5)
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -218,22 +212,24 @@ def play_animal_in_hoop():
 
     behavior_list.do_suggestion()
     while True:
+        time.sleep(1)
         tts('잘했어!')
         tts('그럼 이제 바람을 일으켜서 동물을을 훌라후프 안에 날려 넣자')
 
-        time.sleep(5)
-        print('여기 행동 촬영 들어갈 곳. 아마도?')
+        print('---여기 행동 촬영 들어갈 곳 2---')
         time.sleep(2)
         break
 
     behavior_list.do_suggestion()
     while True:
+        time.sleep(1)
         tts('곳곳에 휴지 섬을 만들어 보자. 휴지를 통째로 놓고 쌓아줘~')
         break
 
     # 4) 놀이 완료
     behavior_list.do_question()
     while True:
+        time.sleep(1)
         tts('또 그리고 싶은 동물이 있어?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -260,22 +256,21 @@ def play_animal_in_hoop():
 
     behavior_list.do_compliment()
     while True:
-        time.sleep(2)
+        time.sleep(1)
         tts('다양한 동물을 그려서 훌라후프에 넣었어. 수고했어~')
         break
 
     # 5) 마무리 대화
     behavior_list.do_question()
     while True:
+        time.sleep(1)
         tts('놀이 재미있었어?')
-        break
 
-    # os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-    # user_input = stt()
-    # user_input = input("input: ")
-    answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 7 -r 16000 stream.wav")
+        user_input = stt()
+        # user_input = input("input: ")
+        answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-    while answer != -1:
         if answer == 'YES':
             print(answer)
             behavior_list.do_joy()
@@ -291,7 +286,6 @@ def play_animal_in_hoop():
                 time.sleep(2)
                 tts('아쉬운걸? 파이보는 너가 동물을 잘 그려줘서 재미있었어.')
                 break
-
         else:
             tts('말 다시')
             os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -304,6 +298,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_question()
     while True:
+        time.sleep(1)
         tts('너는 어떤 동물을 키우고 싶어?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -314,7 +309,7 @@ def play_animal_in_hoop():
 
     behavior_list.do_joy()
     while True:
-        time.sleep(2)
+        time.sleep(1)
         tts('정말? 왜?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -330,24 +325,24 @@ def play_animal_in_hoop():
         break
 
     # 6) 놀이 기록
+    tts('오늘은 술술 스탬프를 찍어줄게')
     behavior_list.do_stamp()
     while True:
-        time.sleep(3)
-        tts('\n오늘은 술술 스탬프를 찍어줄게')
+        time.sleep(2)
         break
 
+    tts('사진을 찍어 줄게. 브으으으으이~!')
     behavior_list.do_photo()
     while True:
-        tts('사진을 찍어 줄게. 부이부이~ ^-^')
-
-        time.sleep(5)
-        print('여기 행동 촬영 들어갈 곳. 아마도?')
+        time.sleep(1)
+        print('---여기 행동 촬영 들어갈 곳 2---')
         time.sleep(2)
         break
 
     # 7) 다음 놀이 제안
     behavior_list.do_question()
     while True:
+        time.sleep(1)
         tts('다음 놀이 할까?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
@@ -366,6 +361,7 @@ def play_animal_in_hoop():
         #     continue
         break
 
+    tts('세 번째 시나리오 훌라후프에 동물 넣기 놀이 끝')
     motion_list.m_init()
 
     print("\n\n**시나리오 45: 훌라후프에 동물 넣기 놀이 끄읏**\n\n")
