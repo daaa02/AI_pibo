@@ -37,27 +37,34 @@ class nlp:
         return answer
 
 
+    # def nlp_animal(self, user_input, dic):
+    #     answer = ''
+    #     for i in range(len(dic.animal['Rabbit'])):
+    #         if dic.animal['Rabbit'][i] in user_input:
+    #             answer = '토끼'
+    #     return answer
+
+    
     def nlp_animal(self, user_input, dic):
-        answer = ''
-        for i in range(len(dic.animal['Rabbit'])):
-            if dic.animal['Rabbit'][i] in user_input:
-                answer = '토끼'        
-        return answer
+        if dic.animal in user_input:
+            answer = dic.animal
+            return answer
 
 
 class Dictionary:
     def __init__(self):
         self.yes_or_no = \
             {
-                'Yes': ['yes', '네', '예', '응', '어', '있어', '좋아', '그래', '맞아'],
-                'No': ['no', '아니', '안', '별로', '글쎄', '싫어', '싫', '못 하', '못 하겠어', '못해', '없어', '없네', '없는', '몰라', '모르', '몰라' '그만'],
-                'SoSo': ['again', '또', '같은', '한 번 더', '계속']
+                'Yes': ['yes', '네', '예', '응', '어', '있어', '좋아', '그래', '맞아', '알았어', '알겠어'],
+                'No': ['no', '아니', '안', '별로', '글쎄', '싫어', '싫', '못 하', '못 하겠어', '못해', '없었어', '없어', '없네', 
+                       '없는', '몰라', '모르', '몰라' '그만'],
+                'SoSo': ['again', '또', '같은', '한 번 더', '한번 더', '계속']
             }
         self.done = \
             {
-                'Done': ['done', '완료', '됐어', '했어', '하자', '왔어', '시작', '끝', '다 만들었어', '다 그렸어',]
+                'Done': ['done', '완료', '됐어', '했어', '하자', '왔어', '시작', '끝', '다 만들었어', '다 그렸어', '다 오렸어']
             }
         self.animal = \
             {
-                'Rabbit': ['토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리']
+                ['토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리', '타조']
             }
