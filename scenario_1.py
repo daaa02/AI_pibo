@@ -133,6 +133,7 @@ def play_balloon_soccer():
         if answer == 'YES':
             print(answer)
         elif answer == 'NO':
+            print(answer)
             behavior_list.do_explain()
             while True:
                 time.sleep(1)
@@ -147,7 +148,6 @@ def play_balloon_soccer():
     while True:
         time.sleep(1)
         tts('풍선을 묶지 말고 멀리 날려보자!')
-        time.sleep(2)
         break
 
     behavior_list.do_photo()
@@ -245,7 +245,7 @@ def play_balloon_soccer():
     tts('오늘은 튼튼 스탬프를 찍어줄게')
     behavior_list.do_stamp()
     while True:
-        time.sleep(2)        
+        time.sleep(2)
         break
 
     tts('사진을 찍어 줄게. 브이~ ^-^v')
