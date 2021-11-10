@@ -315,7 +315,7 @@ def play_im_king():
     behavior_list.do_photo()
     while True:
         time.sleep(1)
-        print('---여기 행동 촬영 들어갈 곳 2---')
+        print('---여기 행동 촬영 들어갈 곳 3---')
         time.sleep(2)
         break
 
