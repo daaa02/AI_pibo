@@ -133,9 +133,11 @@ def play_balloon_soccer():
         if answer == 'YES':
             print(answer)
         elif answer == 'NO':
-            print(answer)
-            tts('엄마에게 도움을 요청해')
-            time.sleep(3)
+            behavior_list.do_explain()
+            while True:
+                time.sleep(1)
+                tts('엄마에게 도움을 요청하자')
+                break
         # else:
         #     tts('말 다시')
         #     continue
@@ -215,7 +217,7 @@ def play_balloon_soccer():
     while True:
         tts('파이보는 달리느라 힘들었어. 너는 오늘 힘든 일 있었어?')
 
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 7 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -240,12 +242,12 @@ def play_balloon_soccer():
         break
 
     # 6) 놀이 기록
+    tts('오늘은 튼튼 스탬프를 찍어줄게')
     behavior_list.do_stamp()
     while True:
-        time.sleep(1)
-        tts('오늘은 튼튼 스탬프를 찍어줄게')
+        time.sleep(2)        
         break
-    
+
     tts('사진을 찍어 줄게. 브이~ ^-^v')
     behavior_list.do_photo()
     while True:
@@ -276,6 +278,7 @@ def play_balloon_soccer():
         #     continue
         break
 
+    tts('첫 번째 시나리오 풍선 축구 놀이 끝')
     motion_list.m_init()
 
     print("\n\n**시나리오 30: 풍선 축구 놀이 끄읏**\n\n")
