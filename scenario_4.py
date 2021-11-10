@@ -341,7 +341,7 @@ def play_im_king():
         #     continue
         break
 
-    tts('첫 번째 시나리오 풍선 축구 놀이 끝')
+    tts('네 번째 시나리오 나는 왕 놀이 끝')
     motion_list.m_init()
 
     print("시나리오 13: 나는 와아아앙 놀이 끄읏")
