@@ -91,12 +91,12 @@ def play_tissue_load():
             break
         break
 
+    
+    time.sleep(1)
+    tts('준비가 되면 준비 완료 라고 말해줘')
     behavior_list.do_waiting()
     while True:
-        time.sleep(1)
-        tts('준비가 되면 준비 완료 라고 말해줘')
-
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -111,7 +111,8 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(1)
-        tts('휴지를 풀어서 길을 만들어 볼거야. 할 수 있지?')
+        tts('휴지를 풀어서 길을 만들어 볼거야.    
+        time.sleep(1)할 수 있지?')
         break
 
     behavior_list.do_question()
@@ -141,15 +142,17 @@ def play_tissue_load():
                 continue
             break
         break
-
+    
+    time.sleep(1)
     behavior_list.do_explain()
     while True:
         time.sleep(1)
-        tts('휴지 길은 미끄러울 수 있으니 뛰면 안 돼. 준비 됐지?')
+        tts('휴지 길은 미끄러울 수 있으니 뛰면 안 돼.')
         break
 
     behavior_list.do_question()
     while True:
+        tts('준비 됐지?')
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
@@ -168,7 +171,7 @@ def play_tissue_load():
 
     behavior_list.do_waiting()
     while True:
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -178,7 +181,7 @@ def play_tissue_load():
                 print(answer)
             else:
                 tts('휴지를 짧게 뜯으면 모양을 만들기 쉬워')
-                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
+                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
                 user_input = stt()
                 # user_input = input("input: ")
                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -251,9 +254,6 @@ def play_tissue_load():
     behavior_list.do_suggestion()
     while True:
         tts('길을 만들 때 쓴 휴지를 찢어서 휴지 성에 눈을 내리자')
-
-        time.sleep(1)
-        print('---여기 행동 촬영 들어갈 곳 5---')
         time.sleep(2)
         break
 
@@ -278,6 +278,7 @@ def play_tissue_load():
         print(user_input)
         break
 
+    time.sleep(1)
     behavior_list.do_joy()
     while True:
         time.sleep(1)
