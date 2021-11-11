@@ -48,7 +48,7 @@ class nlp:
     def nlp_animal(self, user_input, dic):
         if dic.animal in user_input:
             answer = dic.animal
-            return answer
+        return answer
 
 
 class Dictionary:
