@@ -22,7 +22,7 @@ motion = Motion()
 
 
 def do_question():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/물음표소리1.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/물음표소리1.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_question(), args=())
     m = Thread(target=motion.set_motion, args=("m_question", 1))
     o = Thread(target=motion_list.m_question(), args=())
@@ -110,7 +110,7 @@ def do_waiting():
 
 
 def do_cheer():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/경쾌한소리.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/경쾌한소리.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_cheer(), args=())
     m = Thread(target=motion.set_motion, args=("m_cheer", 1))
     o = Thread(target=oled_list.o_cheer(), args=())
@@ -125,7 +125,7 @@ def do_cheer():
 
 
 def do_compliment():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/경쾌한음악.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/경쾌한음악.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_compliment(), args=())
     m = Thread(target=motion.set_motion, args=("m_compliment", 1))
     o = Thread(target=oled_list.o_compliment, args=())
@@ -140,7 +140,7 @@ def do_compliment():
 
 
 def do_concil():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/슬픈소리.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/슬픈소리.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_concil(), args=())
     m = Thread(target=motion.set_motion, args=("m_concil", 1))
     o = Thread(target=oled_list.o_concil, args=())
@@ -169,7 +169,7 @@ def do_search():
 
 
 def do_sleep():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/잠자는소리1.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/잠자는소리1.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_sleep(), args=())
     m = Thread(target=motion.set_motion, args=("m_sleep", 1))
     o = Thread(target=oled_list.o_sleep(), args=())
@@ -184,7 +184,7 @@ def do_sleep():
 
 
 def do_wakeup():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/일어나는소리.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/일어나는소리.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_wakeup(), args=())
     m = Thread(target=motion.set_motion, args=("m_wakeup", 1))
     o = Thread(target=oled_list.o_wakeup(), args=())
@@ -244,7 +244,7 @@ def do_joy():
 
 
 def do_angry():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/삐진소리.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/삐진소리.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_angry(), args=())
     m = Thread(target=motion.set_motion, args=("m_angry", 1))
     o = Thread(target=oled_list.o_angry(), args=())
@@ -259,7 +259,7 @@ def do_angry():
 
 
 def do_sad():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/슬픈소리.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/슬픈소리.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_sad(), args=())
     m = Thread(target=motion.set_motion, args=("m_sad", 1))
     o = Thread(target=oled_list.o_sad(), args=())
@@ -274,7 +274,7 @@ def do_sad():
 
 
 def do_tired():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/조는소리1.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/조는소리1.wav", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_tired(), args=())
     m = Thread(target=motion.set_motion, args=("m_tired", 1))
     o = Thread(target=oled_list.o_tired(), args=())
