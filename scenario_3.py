@@ -342,7 +342,7 @@ def play_animal_in_hoop():
     tts('사진을 찍어 줄게. 브으으으으이~!')
     behavior_list.do_photo()
     while True:
-        time.sleep(1)
+        time.sleep(2)
         print('---여기 행동 촬영 들어갈 곳 2---')
         audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
         time.sleep(2)
