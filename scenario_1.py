@@ -62,10 +62,10 @@ def play_balloon_soccer():
         time.sleep(1)
         tts('풍선과 천을 준비할 수 있어?')
         break
-
+    
     behavior_list.do_waiting()
     while True:
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -91,21 +91,20 @@ def play_balloon_soccer():
             break
         break
 
-    behavior_list.do_waiting()
-    while True:
-        time.sleep(1)
-        tts('풍선 준비가 되면 준비 완료 라고 말해줘')
+    time.sleep(1)
+    tts('풍선 준비가 되면 준비 완료 라고 말해줘')
+        behavior_list.do_waiting()
+        while True:
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-        user_input = stt()
-        # user_input = input("input: ")
-        answer = nlp.nlp_done(user_input=user_input, dic=dic)
-
-        if answer == 'DONE':
-            print(answer)
-        # else:
-        #     continue
-        break
+            if answer == 'DONE':
+                print(answer)
+            # else:
+            #     continue
+            break
 
     # 2) 놀이 설명
     behavior_list.do_suggestion()
@@ -143,23 +142,20 @@ def play_balloon_soccer():
         #     tts('말 다시')
         #     continue
         break
-
+    
+    time.sleep(1)
     behavior_list.do_suggestion()
     while True:
         time.sleep(1)
         tts('풍선을 묶지 말고 멀리 날려보자!')
-        break
 
-    behavior_list.do_photo()
-    while True:
-        time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 1---')
-        time.sleep(2)
+        time.sleep(1)
         break
 
     behavior_list.do_joy()
     while True:
-        time.sleep(1)
+        time.sleep(2)
         tts('정말 재밌어보여!')
         break
 
@@ -173,7 +169,8 @@ def play_balloon_soccer():
     behavior_list.do_question()
     while True:
         time.sleep(1)
-        tts('축구 선수처럼 발 혹은 무릎 높이로 차보자. 준비 됐어?')
+        tts('축구 선수처럼 발 혹은 무릎 높이로 차보자.')
+        tts('준비 됐어?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -213,11 +210,11 @@ def play_balloon_soccer():
         #     break
         break
 
-    behavior_list.do_tired()
+    behavior_list.do_sad()
     while True:
         tts('파이보는 달리느라 힘들었어. 너는 오늘 힘든 일 있었어?')
 
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 7 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -246,7 +243,7 @@ def play_balloon_soccer():
     behavior_list.do_stamp()
     while True:
         time.sleep(2)
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1(스탬프찍기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1.mp3", out='local', volume=-1000, background=False)
         break    
 
     tts('사진을 찍어 줄게. 브이~ ^-^v')
@@ -254,7 +251,7 @@ def play_balloon_soccer():
     while True:
         time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 2---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리(촬영하기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
         time.sleep(2)
         break
 
