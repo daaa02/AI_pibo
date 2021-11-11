@@ -53,17 +53,18 @@ def tts(speech_text):
     print("\n")
     print(speech_text)
 
-
+    
+    
 ###
 def play_im_king():
     # 1) 준비물 설명
-    behavior_list.do_explain()
+    behavior_list.do_question()
     while True:
         time.sleep(1)
         tts('놀이를 위해 왕관이 필요해. 준비할 수 있어?')
         break
 
-    behavior_list.do_question()
+    behavior_list.do_waiting()
     while True:
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -91,12 +92,12 @@ def play_im_king():
             break
         break
 
+    
+    time.sleep(1)
+    tts('준비가 되면 준비 완료 라고 말해줘')
     behavior_list.do_waiting()
     while True:
-        time.sleep(1)
-        tts('준비가 되면 준비 완료 라고 말해줘')
-
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_done(user_input=user_input, dic=dic)
@@ -113,12 +114,12 @@ def play_im_king():
         time.sleep(1)
         tts('파이보가 왕이다!를 외치면, 먼저 왕관을 쓴 사람이 왕이 되는 거야.')
         tts('시민은 왕의 행동을 그대로 따라해야해.')
-        tts('할 수 있지?')
         break
 
     behavior_list.do_question()
     while True:
-        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        tts('할 수 있지?')
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
@@ -142,7 +143,8 @@ def play_im_king():
                 continue
             break
         break
-
+        
+    time.sleep(1)
     behavior_list.do_explain()
     while True:
         time.sleep(1)
@@ -198,7 +200,6 @@ def play_im_king():
     while True:
         tts('그럼 시민은 왕을 따라해보자!')
 
-        time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 2---')
         time.sleep(2)
         break
@@ -229,7 +230,8 @@ def play_im_king():
                 continue
             break
         break
-
+        
+    time.sleep(1)
     behavior_list.do_compliment()
     while True:
         time.sleep(1)
@@ -275,7 +277,8 @@ def play_im_king():
             print(answer)
             continue
         break
-
+    
+    time.sleep(1)
     behavior_list.do_question()
     while True:
         time.sleep(1)
@@ -309,7 +312,7 @@ def play_im_king():
     behavior_list.do_stamp()
     while True:
         time.sleep(2)
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1(스탬프찍기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1.mp3", out='local', volume=-1000, background=False)
         break
 
     tts('사진을 찍어 줄게. 브이~ ^-^v')
@@ -317,7 +320,7 @@ def play_im_king():
     while True:
         time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 3---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리(촬영하기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
         time.sleep(2)
         break
 
