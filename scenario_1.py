@@ -93,24 +93,24 @@ def play_balloon_soccer():
 
     time.sleep(1)
     tts('풍선 준비가 되면 준비 완료 라고 말해줘')
-        behavior_list.do_waiting()
-        while True:
-            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-            user_input = stt()
-            # user_input = input("input: ")
-            answer = nlp.nlp_done(user_input=user_input, dic=dic)
+    behavior_list.do_waiting()
+    while True:
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
+        user_input = stt()
+        # user_input = input("input: ")
+        answer = nlp.nlp_done(user_input=user_input, dic=dic)
 
-            if answer == 'DONE':
-                print(answer)
-            # else:
-            #     continue
-            break
+        if answer == 'DONE':
+            print(answer)
+        # else:
+        #     continue
+        break
 
     # 2) 놀이 설명
     behavior_list.do_suggestion()
     while True:
         time.sleep(1)
-        tts('너가 좋아하는 색깔의 풍선을 골라봐.')
+        tts('다영이가 좋아하는 색깔의 풍선을 골라봐.')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -212,7 +212,7 @@ def play_balloon_soccer():
 
     behavior_list.do_sad()
     while True:
-        tts('파이보는 달리느라 힘들었어. 너는 오늘 힘든 일 있었어?')
+        tts('파이보는 달리느라 힘들었어. 다영이는 오늘 힘든 일 있었어?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 6 -r 16000 stream.wav")
         user_input = stt()
