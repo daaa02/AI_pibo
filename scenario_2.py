@@ -111,10 +111,11 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(1)
-        tts('휴지를 풀어서 길을 만들어 볼거야.    
-        time.sleep(1)할 수 있지?')
+        tts('휴지를 풀어서 길을 만들어 볼거야.')        
+        tts('할 수 있지?')
         break
-
+        
+    time.sleep(1)
     behavior_list.do_question()
     while True:
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
