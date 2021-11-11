@@ -245,7 +245,7 @@ def play_tissue_load():
     while True:
         time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 4---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리(촬영하기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
         time.sleep(2)
         break
 
@@ -292,7 +292,7 @@ def play_tissue_load():
     behavior_list.do_stamp()
     while True:
         time.sleep(2)
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1(스탬프찍기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1.mp3", out='local', volume=-1000, background=False)
         break
 
     tts('사진을 찍어 줄게. 브이~ ^-^v')
@@ -300,7 +300,7 @@ def play_tissue_load():
     while True:
         time.sleep(1)
         print('---여기 행동 촬영 들어갈 곳 6---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리(촬영하기).mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
         time.sleep(2)
         break
 
