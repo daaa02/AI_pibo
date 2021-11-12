@@ -199,7 +199,7 @@ def do_wakeup():
 
 
 def do_agree():
-    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/딩동댕1.mp3", out='local', volume=-1000, background=False)
+    audio.play(filename=openpibo.config['DATA_PATH']+"/audio/딩동댕3.mp3", out='local', volume=-1000, background=False)
     # e = Thread(target=eye_list.e_agree(), args=())
     m = Thread(target=motion.set_motion, args=("m_agree", 1))
     # o = Thread(target=oled_list.o_agree(), args=())
