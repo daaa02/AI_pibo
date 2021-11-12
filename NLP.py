@@ -37,19 +37,19 @@ class nlp:
         return answer
 
 
-    # def nlp_animal(self, user_input, dic):
-    #     answer = ''
-    #     for i in range(len(dic.animal['Rabbit'])):
-    #         if dic.animal['Rabbit'][i] in user_input:
-    #             answer = '토끼'
-    #     return answer
+    def nlp_animal(self, user_input, dic):
+        answer = ''
+        for i in range(len(dic.animal['Rabbit'])):
+            if dic.animal['Rabbit'][i] in user_input:
+                answer = '토끼'
+        return answer
 
-    
+    '''
     def nlp_animal(self, user_input, dic):
         if dic.animal in user_input:
             answer = dic.animal
         return answer
-
+    '''
 
 class Dictionary:
     def __init__(self):
@@ -66,5 +66,5 @@ class Dictionary:
             }
         self.animal = \
             {
-                '토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리', '타조'
+                'Rabbit': ['토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리', '타조']
             }
