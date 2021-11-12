@@ -243,7 +243,7 @@ def play_balloon_soccer():
     behavior_list.do_stamp()
     while True:
         time.sleep(2)
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1.mp3", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리2.wav", out='local', volume=-1000, background=False)
         break    
 
     tts('사진을 찍어 줄게. 브이 해봐!')
