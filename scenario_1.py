@@ -20,7 +20,7 @@ dic = Dictionary()
 speech = Speech()
 audio = Audio()
 
-'''
+
 def stt():
     rest_api_key = 'f8f8c3f66bb3310016fdeccffba152e8'
 
@@ -52,7 +52,7 @@ def tts(speech_text):
     audio.play(file, 'local', '-1000', False)
     print("\n")
     print(speech_text)
-'''
+
 
 ###
 def play_balloon_soccer():
