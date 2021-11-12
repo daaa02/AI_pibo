@@ -112,11 +112,11 @@ def play_tissue_load():
     while True:
         time.sleep(1)
         tts('휴지를 풀어서 길을 만들어 볼거야.')        
-        tts('할 수 있지?')
         break
         
     time.sleep(1)
     behavior_list.do_question()
+    tts('할 수 있지?')
     while True:
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -167,7 +167,8 @@ def play_tissue_load():
     behavior_list.do_explain()
     while True:
         time.sleep(1)
-        tts('휴지 길을 만들어 보자! 다 만들면 알려줘')
+        tts('휴지 길을 만들어 보자!') 
+        tts('다 만들면 알려줘')
         break
 
     behavior_list.do_waiting()
@@ -193,7 +194,7 @@ def play_tissue_load():
 
     behavior_list.do_compliment()
     while True:
-        time.sleep(1)
+        time.sleep(2)
         tts('정말 멋진 길이 완성되었는걸?')
         break
 
@@ -213,6 +214,7 @@ def play_tissue_load():
         break
 
     # 4) 놀이 완료
+    motion_list.m_init()
     behavior_list.do_waiting()
     while True:
         time.sleep(1)
@@ -240,14 +242,7 @@ def play_tissue_load():
     while True:
         time.sleep(1)
         tts('파이보가 사진찍어서 부모님께도 보여드릴게. 깜짝 놀라실거야!')
-        break
-
-    behavior_list.do_photo()
-    while True:
         time.sleep(1)
-        print('---여기 행동 촬영 들어갈 곳 4---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
-        time.sleep(2)
         break
 
 
@@ -258,9 +253,10 @@ def play_tissue_load():
         time.sleep(2)
         break
 
-    behavior_list.do_question()
+    behavior_list.do_compliment()
     while True:
-        tts('휴지 눈이 내리니까 정말 포근해. 너는 언제 포근함을 느껴?')
+        tts('휴지 눈이 내리니까 정말 포근하다.') 
+        tts('다영이는 언제 포근함을 느껴?')
 
         os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
         user_input = stt()
@@ -287,8 +283,8 @@ def play_tissue_load():
         break
 
 
-
     # 6) 놀이 기록
+    motion_list.m_init()
     tts('오늘은 똑똑 스탬프를 찍어줄게')
     behavior_list.do_stamp()
     while True:
@@ -296,14 +292,16 @@ def play_tissue_load():
         audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리1.mp3", out='local', volume=-1000, background=False)
         break
 
-    tts('사진을 찍어 줄게. 브이~ ^-^v')
-    behavior_list.do_photo()
-    while True:
-        time.sleep(1)
-        print('---여기 행동 촬영 들어갈 곳 6---')
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
-        time.sleep(2)
-        break
+     tts('사진을 찍어 줄게. 브이 해봐!')
+        behavior_list.do_photo()
+        while True:
+            time.sleep(1)
+            tts('하나, 둘, 셋 ')        
+            audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
+            print('---여기 행동 촬영 들어갈 곳 6---')
+            motion_list.m_init()
+            break
+        
 
     # 7) 다음 놀이 제안
     behavior_list.do_question()
