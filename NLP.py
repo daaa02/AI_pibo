@@ -1,3 +1,5 @@
+import re
+
 from konlpy.tag import Kkma
 from konlpy.tag import Komoran
 from konlpy.tag import Okt
@@ -36,27 +38,20 @@ class nlp:
                 answer = 'DONE'  # 'Done'
         return answer
 
-
+    
     def nlp_animal(self, user_input, dic):
-        answer = ''
-        for i in range(len(dic.animal['Rabbit'])):
-            if dic.animal['Rabbit'][i] in user_input:
-                answer = '토끼'
-        return answer
+        a_list = re.split('[ 가랑을를]', user_input)     # ' ', 가, 랑, 을, 를 제거하고 리스트
 
-    '''
-    def nlp_animal(self, user_input, dic):
-        if dic.animal in user_input:
-            answer = dic.animal
-        return answer
-    '''
+        answer = [i for i in a_list if i in dic.animal]
+        return answer[0]
+
 
 class Dictionary:
     def __init__(self):
         self.yes_or_no = \
             {
                 'Yes': ['yes', '네', '예', '응', '어', '있어', '좋아', '그래', '맞아', '알았어', '알겠어', '당연'],
-                'No': ['no', '아니', '안', '별로', '글쎄', '싫어', '싫', '못 하', '못 하겠어', '못해', '없었어', '없어', '없네', 
+                'No': ['no', '아니', '안', '별로', '글쎄', '싫어', '싫', '못 하', '못 하겠어', '못해', '없었어', '없어', '없네',
                        '없는', '몰라', '모르', '몰라' '그만'],
                 'SoSo': ['again', '또', '같은', '한 번 더', '한번 더', '계속']
             }
@@ -64,7 +59,4 @@ class Dictionary:
             {
                 'Done': ['done', '완료', '됐어', '했어', '하자', '왔어', '시작', '끝', '다 만들었어', '다 그렸어', '다 오렸어']
             }
-        self.animal = \
-            {
-                'Rabbit': ['토끼', '사슴', '호랑이', '고양이', '강아지', '개', '돌고래', '수달', '코끼리', '오리', '타조']
-            }
+        self.animal = ['토끼', '타조', '돌고래', '사슴', '호랑이', '고양이', '강아지', '개',  '수달', '코끼리', '오리', '사자', '새']
