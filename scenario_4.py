@@ -53,8 +53,7 @@ def tts(speech_text):
     print("\n")
     print(speech_text)
 
-    
-    
+
 ###
 def play_im_king():
     # 1) 준비물 설명
@@ -71,28 +70,28 @@ def play_im_king():
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        while answer != -1:
-            if answer == 'YES':
-                print(answer)
-            elif answer == 'NO':
-                print(answer)
-                behavior_list.do_explain()
-                while True:
-                    time.sleep(1)
-                    tts('왕관 대신 모자를 준비해도 좋아')
-                    break
-#             else:
-#                 tts('말 다시')
-#                 os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-#                 user_input = stt()
-#                 # user_input = input("input: ")
-#                 answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-#                 print(answer)
-#                 continue
-            break
+        if answer == 'YES':
+            print(answer)
+
+        elif answer == 'NO':
+            print(answer)
+            behavior_list.do_explain()
+            while True:
+                time.sleep(1)
+                tts('왕관 대신 모자를 준비해도 좋아')
+                break
+
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
+
         break
 
-    
     time.sleep(1)
     tts('준비가 되면 준비 완료 라고 말해줘')
     behavior_list.do_waiting()
@@ -104,8 +103,15 @@ def play_im_king():
 
         if answer == 'DONE':
             print(answer)
-        # else:
-        #     continue
+
+        elif 'no result' in user_input:     # 말 들어올 때까지 반복
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
+            print(answer)
+            continue
+
         break
 
     # 2) 놀이 설명
@@ -124,26 +130,26 @@ def play_im_king():
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        while answer != -1:
-            if answer == 'YES':
-                print(answer)
-            elif answer == 'NO':
-                print(answer)
-                behavior_list.do_explain()
-                while True:
-                    tts('재빨리 왕관을 차지하면, 시민들이 왕을 따라할거야.')
-                    break
-            else:
-                tts('말 다시')
-                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-                user_input = stt()
-                # user_input = input("input: ")
-                answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-                print(answer)
-                continue
-            break
+        if answer == 'YES':
+            print(answer)
+
+        elif answer == 'NO':
+            print(answer)
+            behavior_list.do_explain()
+            while True:
+                tts('재빨리 왕관을 차지하면, 시민들이 왕을 따라할거야.')
+                break
+
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
         break
-        
+
     time.sleep(1)
     behavior_list.do_explain()
     while True:
@@ -162,6 +168,14 @@ def play_im_king():
 
         if answer == 'DONE':
             print(answer)
+
+        elif 'no result' in user_input:     # 말 들어올 때까지 반복
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
+            print(answer)
+            continue
         break
 
     # 3) 놀이 진행
@@ -203,7 +217,6 @@ def play_im_king():
         print('---여기 행동 촬영 들어갈 곳 2---')
         time.sleep(2)
         break
-        
 
     # 4) 놀이 완료
     behavior_list.do_question()
@@ -215,23 +228,23 @@ def play_im_king():
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        while answer != -1:
-            if answer == 'YES':  # 다시 활동으로
-                print(answer)
-                print('# 다시 활동으로 - 아직 구현 X')
-            elif answer == 'NO':  # 그만
-                print(answer)
-            else:
-                tts('말 다시')
-                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-                user_input = stt()
-                # user_input = input("input: ")
-                answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-                print(answer)
-                continue
-            break
+        if answer == 'YES':  # 다시 활동으로
+            print(answer)
+
+            print('# 다시 활동으로 - 아직 구현 X')
+        elif answer == 'NO':  # 그만
+            print(answer)
+
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
         break
-        
+
     time.sleep(1)
     behavior_list.do_compliment()
     while True:
@@ -245,14 +258,12 @@ def play_im_king():
     while True:
         time.sleep(1)
         tts('놀이 재미있었어?')
-        break
 
-    os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-    user_input = stt()
-    # user_input = input("input: ")
-    answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+        os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+        user_input = stt()
+        # user_input = input("input: ")
+        answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-    while answer != -1:
         if answer == 'YES':
             print(answer)
             behavior_list.do_joy()
@@ -269,8 +280,8 @@ def play_im_king():
                 tts('아쉬운걸? 파이보는 너가 역할을 잘 해내서 재미있었어.')
                 break
 
-        else:
-            tts('말 다시')
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
             os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
             user_input = stt()
             # user_input = input("input: ")
@@ -278,7 +289,7 @@ def play_im_king():
             print(answer)
             continue
         break
-    
+
     time.sleep(1)
     behavior_list.do_question()
     while True:
@@ -309,25 +320,25 @@ def play_im_king():
         tts('그렇구나. 시민과 왕을 서로 양보하는 모습이 보기 좋았어!')
         break
 
-        
     # 6) 놀이 기록
     tts('오늘은 바른 스탬프를 찍어줄게')
     behavior_list.do_stamp()
     while True:
         time.sleep(2)
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/스탬프소리2.wav", out='local', volume=-1000, background=False)
+        audio.play(filename=openpibo.config['DATA_PATH'] + "/audio/스탬프소리2.wav", out='local', volume=-1000,
+                   background=False)
         break
 
     tts('사진을 찍어 줄게. 브이 해봐!')
     behavior_list.do_photo()
     while True:
         time.sleep(1)
-        tts('하나, 둘, 셋 ')         
-        audio.play(filename=openpibo.config['DATA_PATH']+"/audio/사진기소리.mp3", out='local', volume=-1000, background=False)
+        tts('하나, 둘, 셋 ')
+        audio.play(filename=openpibo.config['DATA_PATH'] + "/audio/사진기소리.mp3", out='local', volume=-1000,
+                   background=False)
         print('---여기 행동 촬영 들어갈 곳 3---')
         motion_list.m_init()
         break
-        
 
     # 7) 다음 놀이 제안
     behavior_list.do_question()
@@ -342,13 +353,22 @@ def play_im_king():
 
         if answer == 'YES':
             print(answer)
+
         elif answer == 'NO':
             print(answer)
+
         elif answer == 'SOSO':
             print(answer)
-        # else:
-        #     tts('말 다시')
-        #     continue
+
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
+
         break
 
     tts('네 번째 시나리오 나는 왕 놀이 끝')
