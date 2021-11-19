@@ -134,27 +134,25 @@ def play_animal_in_hoop():
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        while answer != -1:
-            if answer == 'YES':
-                print(answer)
+        if answer == 'YES':
+            print(answer)
 
-            elif answer == 'NO':
-                print(answer)
-                behavior_list.do_explain()
-                while True:
-                    time.sleep(1)
-                    tts('바람은 입으로 불거나 부채를 활용하면 돼.')
-                    break
+        elif answer == 'NO':
+            print(answer)
+            behavior_list.do_explain()
+            while True:
+                time.sleep(1)
+                tts('바람은 입으로 불거나 부채를 활용하면 돼.')
+                break
 
-            elif 'no result' in user_input:
-                tts('다시 말해줘')
-                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-                user_input = stt()
-                # user_input = input("input: ")
-                answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-                print(answer)
-                continue
-            break
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
         break
 
     time.sleep(1)
@@ -175,6 +173,15 @@ def play_animal_in_hoop():
 
         if answer == 'DONE':
             print(answer)
+            
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue
         break
 
     # 3) 놀이 진행
@@ -274,23 +281,21 @@ def play_animal_in_hoop():
         # user_input = input("input: ")
         answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
 
-        while answer != -1:
-            if answer == 'YES':  # 다시 활동으로
-                print(answer)
-                print('# 다시 활동으로 - 아직 구현 X')
+        if answer == 'YES':  # 다시 활동으로
+            print(answer)
+            print('# 다시 활동으로 - 아직 구현 X')
 
-            elif answer == 'NO':  # 그만
-                print(answer)
+        elif answer == 'NO':  # 그만
+            print(answer)
 
-            elif 'no result' in user_input:
-                tts('다시 말해줘')
-                os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
-                user_input = stt()
-                # user_input = input("input: ")
-                answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
-                print(answer)
-                continue
-            break
+        elif 'no result' in user_input:
+            tts('다시 말해줘')
+            os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
+            user_input = stt()
+            # user_input = input("input: ")
+            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            print(answer)
+            continue         
         break
 
     time.sleep(1)
