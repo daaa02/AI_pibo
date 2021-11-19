@@ -112,7 +112,7 @@ def play_animal_in_hoop():
             os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
             user_input = stt()
             # user_input = input("input: ")
-            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
             print(answer)
             continue
         break
@@ -212,7 +212,7 @@ def play_animal_in_hoop():
             os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
             user_input = stt()
             # user_input = input("input: ")
-            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
             print(answer)
             continue
         break
@@ -240,7 +240,7 @@ def play_animal_in_hoop():
             os.system("arecord -t wav -c 1 -D plughw:1,0 -f S16_LE -d 5 -r 16000 stream.wav")
             user_input = stt()
             # user_input = input("input: ")
-            answer = nlp.nlp_yes_or_no(user_input=user_input, dic=dic)
+            answer = nlp.nlp_done(user_input=user_input, dic=dic)
             print(answer)
             continue
         break
