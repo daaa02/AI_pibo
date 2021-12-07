@@ -10,6 +10,7 @@ echo "pip install openpibo"
 sudo pip3 install openpibo-python
 
 echo "install openpibo github"
+cd ../
 git clone https://github.com/themakerrobot/themakerrobot.git
 git clone https://github.com/themakerrobot/openpibo-python.git
 git clone https://github.com/themakerrobot/openpibo-tools.git
