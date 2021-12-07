@@ -9,10 +9,6 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 echo "pip install openpibo"
 sudo pip3 install openpibo-python
 
-cd 
-mkdir openpibo
-cd openpibo
-
 echo "install openpibo github"
 git clone https://github.com/themakerrobot/themakerrobot.git
 git clone https://github.com/themakerrobot/openpibo-python.git
